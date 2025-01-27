@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Asegura que "font-sans" esté configurada como predeterminada */
+body {
+    @apply font-sans;
+}
