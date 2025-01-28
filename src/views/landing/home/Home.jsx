@@ -1,33 +1,9 @@
 import React from "react";
-<<<<<<< HEAD
-=======
 import Testimonios from "./Testimonios"; // Importa el componente de testimonios si está en el mismo directorio
 import { Link } from "react-router-dom";
->>>>>>> 42be47891c5d9eda84e752eb6491510272f0072a
 
 const Home = () => {
   return (
-<<<<<<< HEAD
-    <section className="relative h-screen flex flex-col items-center justify-center text-center text-white">
-      <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
-        <video
-          className="min-w-full min-h-full absolute object-cover"
-          src="/images/vidBg.mp4"
-          type="video/mp4"
-          autoPlay
-          muted
-          loop
-        ></video>
-      </div>
-      <div className="video-content space-y-2 z-10">
-        <div class="text-center lg:text-left lg:w-1/2">
-          <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
-            Main title of your landing page
-          </h1>
-          <p class="text-xl lg:text-2xl mt-6 font-light">
-            Free landing page template to promote your business startup and
-            generate leads for the offered services
-=======
     <div className="container mx-auto p-4">
       {/* Sección de bienvenida */}
       <div className="text-center mb-12">
@@ -115,55 +91,31 @@ const Home = () => {
           </h2>
           <p className="mt-4 text-gray-600 leading-relaxed text-center md:text-left">
             Descubre cómo nuestro sistema simplifica tu experiencia médica con características clave y ventajas exclusivas.
->>>>>>> 42be47891c5d9eda84e752eb6491510272f0072a
           </p>
-          <p class="mt-8 md:mt-12">
+          <p className="mt-8 md:mt-12">
             <button
               type="button"
-              class="py-4 px-12 bg-[#0F3715] hover:bg-[#5E8F34] rounded text-white">
+              className="py-4 px-12 bg-[#0F3715] hover:bg-[#5E8F34] rounded text-white">
               Get Started
             </button>
           </p>
-          <p class="mt-4 text-gray-600">Sed fermentum felis ut cursu</p>
-        </div>
-      </div>
-      <style jsx>{`
-        .video-docker video {
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-
-<<<<<<< HEAD
-        .video-docker::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          background: rgba(0, 0, 0, 0.6);
-          z-index: 1;
-        }
-      `}</style>
-    </section>
-=======
-        <div className="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center items-center">
-          <div className="w-full h-64 md:h-96 overflow-hidden">
-            <img
-              src="/images/DiseñoBeneficios.png"
-              alt="Collage Doctores"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <p className="mt-4 text-gray-600">Sed fermentum felis ut cursu</p>
         </div>
       </section>
 
+      <div className="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center items-center">
+        <div className="w-full h-64 md:h-96 overflow-hidden">
+          <img
+            src="/images/DiseñoBeneficios.png"
+            alt="Collage Doctores"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
       {/* Componente de Testimonios */}
       <Testimonios />
-
     </div>
->>>>>>> 42be47891c5d9eda84e752eb6491510272f0072a
   );
 };
 
