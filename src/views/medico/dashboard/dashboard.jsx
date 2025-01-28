@@ -11,12 +11,41 @@ import {
   faCog,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Login() {
+export default function Dashboard() {
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Controla la visibilidad del menú
   const navigate = useNavigate();
+  const [walletData, setWalletData] = useState({
+    received: 15000,
+    sent: 5000,
+    earned: 10000,
+    balance: 20000,
+  });
+
+  const [selectedTransaction, setSelectedTransaction] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const transactionDetails = [
+    {
+      date: "2025-01-28",
+      description: "Ganado en Quiz",
+      amount: "+1000",
+      sender: "Quiz System",
+      time: "14:35:00",
+    },
+    {
+      date: "2025-01-27",
+      description: "Enviado a Usuario X",
+      amount: "-500",
+      sender: "Juan Oscar",
+      time: "10:15:00",
+    },
+  ];
+
+  const handleTransactionClick = (transaction) => {
+    setSelectedTransaction(transaction);
   };
 
   return (
@@ -83,12 +112,14 @@ export default function Login() {
             <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
             {isMenuOpen && <p className="font-semibold">Juan Oscar</p>}
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between items-center">
             <button className="text-white">
               <FontAwesomeIcon icon={faSignOutAlt} className="text-xl" />
+              {isMenuOpen && <span className="ml-2">Log Out</span>}
             </button>
-            <button className="text-white">
+            <button className="text-white flex items-center">
               <FontAwesomeIcon icon={faCog} className="text-xl" />
+              {isMenuOpen && <span className="ml-2">Ajustes</span>}
             </button>
           </div>
         </div>
@@ -96,80 +127,76 @@ export default function Login() {
 
       {/* Contenido principal */}
       <main className={`flex-1 bg-white bg-opacity-75 p-6 md:p-10 flex flex-col`}>
-        {/* Sección de servicios */}
-        <section className="flex-grow mb-12">
+        {/* Dashboard de la wallet */}
+        <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
-            Nuestros servicios
+            Dashboard de Wallet
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <img
-                src="/images/dermatologia.jpg"
-                alt="Dermatología"
-                className="rounded-lg mx-auto mb-2 shadow-lg w-full h-48 object-cover"
-              />
-              <p className="font-medium">Dermatología</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold">Sats Recibidos</h3>
+              <p className="text-2xl font-bold text-green-600">{walletData.received}</p>
             </div>
-            <div className="text-center">
-              <img
-                src="/images/cardiologia.jpeg"
-                alt="Cardiología"
-                className="rounded-lg mx-auto mb-2 shadow-lg w-full h-48 object-cover"
-              />
-              <p className="font-medium">Cardiología</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold">Sats Enviados</h3>
+              <p className="text-2xl font-bold text-red-600">{walletData.sent}</p>
             </div>
-            <div className="text-center">
-              <img
-                src="/images/nutricion.jpeg"
-                alt="Nutrición"
-                className="rounded-lg mx-auto mb-2 shadow-lg w-full h-48 object-cover"
-              />
-              <p className="font-medium">Nutrición</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold">Sats Ganados</h3>
+              <p className="text-2xl font-bold text-blue-600">{walletData.earned}</p>
             </div>
-            <div className="text-center">
-              <img
-                src="/images/odontologia.jpeg"
-                alt="Odontología"
-                className="rounded-lg mx-auto mb-2 shadow-lg w-full h-48 object-cover"
-              />
-              <p className="font-medium">Odontología</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold">Saldo Total</h3>
+              <p className="text-2xl font-bold text-indigo-600">{walletData.balance}</p>
             </div>
           </div>
         </section>
 
-        {/* Sección de equipo */}
+        {/* Historial de transacciones */}
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
-            Nuestro equipo
+            Historial de Transacciones
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <img
-                src="/images/mario.jpeg"
-                alt="Dr. Mario Argueta"
-                className="rounded-full mx-auto mb-2 shadow-lg w-32 h-32 object-cover"
-              />
-              <p className="font-medium">Dr. Mario Argueta</p>
-              <p className="text-sm">Especialista en cardiología</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/images/jessica.jpeg"
-                alt="Dra. Jessica Moran"
-                className="rounded-full mx-auto mb-2 shadow-lg w-32 h-32 object-cover"
-              />
-              <p className="font-medium">Dra. Jessica Moran</p>
-              <p className="text-sm">Especialista en nutrición</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/images/luis.jpeg"
-                alt="Dr. Luis López"
-                className="rounded-full mx-auto mb-2 shadow-lg w-32 h-32 object-cover"
-              />
-              <p className="font-medium">Dr. Luis López</p>
-              <p className="text-sm">Especialista en dermatología</p>
-            </div>
+          <div className="bg-white rounded-lg shadow-lg p-6 overflow-auto">
+            {selectedTransaction ? (
+              <div>
+                <h3 className="text-xl font-bold mb-4">Detalles de la Transacción</h3>
+                <p><strong>Fecha:</strong> {selectedTransaction.date}</p>
+                <p><strong>Descripción:</strong> {selectedTransaction.description}</p>
+                <p><strong>Monto:</strong> {selectedTransaction.amount}</p>
+                <p><strong>Enviado por:</strong> {selectedTransaction.sender}</p>
+                <p><strong>Hora:</strong> {selectedTransaction.time}</p>
+                <button
+                  className="mt-4 bg-teal-600 text-white px-4 py-2 rounded"
+                  onClick={() => setSelectedTransaction(null)}
+                >
+                  Volver al Historial
+                </button>
+              </div>
+            ) : (
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr>
+                    <th className="border-b-2 p-4">Fecha</th>
+                    <th className="border-b-2 p-4">Descripción</th>
+                    <th className="border-b-2 p-4">Monto (Sats)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {transactionDetails.map((transaction, index) => (
+                    <tr
+                      key={index}
+                      className="cursor-pointer hover:bg-gray-200"
+                      onClick={() => handleTransactionClick(transaction)}
+                    >
+                      <td className="border-b p-4">{transaction.date}</td>
+                      <td className="border-b p-4">{transaction.description}</td>
+                      <td className="border-b p-4 text-green-600">{transaction.amount}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
         </section>
       </main>
