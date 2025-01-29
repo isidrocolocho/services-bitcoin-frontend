@@ -61,34 +61,34 @@ export default function CrearTransferencia() {
     const qrData = `bitcoin:${wallet}?amount=${btc}&label=${nombre}&message=Transferencia%20de%20${sats}%20Sats`;
     setQrCodeData(qrData);
 
-    alert("Transferencia generada con éxito!");
+    alert("Transfer successfully generated!");
   };
 
   return (
     <div
       className="flex min-h-screen items-center justify-center p-4"
       style={{
-        backgroundImage: "url('/images/sectionServicios.png')",
+        
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       <div className="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg w-full max-w-md md:max-w-lg">
-        <h1 className="text-2xl font-bold text-center text-teal-700 mb-6">
-          Crear Transferencia
+        <h1 className="text-2xl font-bold text-center text-[#0F3715] mb-6">
+        Create Transfer
         </h1>
         <form className="space-y-4" onSubmit={handleSubmit}>
           {/* Campo: Nombre */}
           <div>
             <label htmlFor="nombre" className="block text-sm font-medium text-gray-700">
-              Nombre completo
+            Full name
             </label>
             <input
               type="text"
               id="nombre"
               name="nombre"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500"
-              placeholder="Ingrese el nombre del destinatario"
+              placeholder="Enter the recipient's name"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
               required
@@ -98,14 +98,14 @@ export default function CrearTransferencia() {
           {/* Campo: Dirección de la wallet */}
           <div>
             <label htmlFor="wallet" className="block text-sm font-medium text-gray-700">
-              Dirección de la wallet
+            Wallet address
             </label>
             <input
               type="text"
               id="wallet"
               name="wallet"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500"
-              placeholder="Ingrese la dirección de la wallet"
+              placeholder="Enter the wallet address"
               value={wallet}
               onChange={(e) => setWallet(e.target.value)}
               required
@@ -115,14 +115,14 @@ export default function CrearTransferencia() {
           {/* Campo: Número de Sats */}
           <div>
             <label htmlFor="sats" className="block text-sm font-medium text-gray-700">
-              Número de Sats
+            Number of Sats
             </label>
             <input
               type="number"
               id="sats"
               name="sats"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500"
-              placeholder="Ingrese el número de Sats"
+              placeholder="Enter the number of Sats"
               value={sats}
               onChange={handleSatsChange}
               required
@@ -132,14 +132,14 @@ export default function CrearTransferencia() {
           {/* Campo: Bitcoin (BTC) */}
           <div>
             <label htmlFor="btc" className="block text-sm font-medium text-gray-700">
-              Monto en Bitcoin (BTC)
+            Amount in Bitcoin (BTC)
             </label>
             <input
               type="number"
               id="btc"
               name="btc"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500"
-              placeholder="Ingrese el monto en Bitcoin"
+              placeholder="Enter the amount in Bitcoin"
               value={btc}
               onChange={handleBtcChange}
               required
@@ -149,14 +149,14 @@ export default function CrearTransferencia() {
           {/* Campo: Monto en dólares */}
           <div>
             <label htmlFor="usd" className="block text-sm font-medium text-gray-700">
-              Monto en dólares (USD)
+            Amount in dollars (USD)
             </label>
             <input
               type="number"
               id="usd"
               name="usd"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500"
-              placeholder="Ingrese el monto en dólares"
+              placeholder="Enter the amount in dollars"
               value={usd}
               onChange={handleUsdChange}
               required
@@ -167,9 +167,9 @@ export default function CrearTransferencia() {
           <div>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full px-4 py-2 bg-[#0F3715] text-white font-semibold rounded-lg hover:bg-[#5E8F34] focus:outline-none focus:ring-2 focus:ring-teal-500"
             >
-              Crear Transferencia
+              Create Transfer
             </button>
           </div>
         </form>
@@ -177,9 +177,9 @@ export default function CrearTransferencia() {
         {/* Mostrar el QR de la transferencia */}
         {qrCodeData && (
           <div className="mt-6 text-center">
-            <h2 className="text-xl font-semibold mb-4">Escanea el QR para realizar la transferencia</h2>
+            <h2 className="text-xl font-semibold mb-4">Scan the QR code to make the transfer.</h2>
             <QRCodeCanvas value={qrCodeData} size={256} />
-            <p className="mt-4 text-sm text-gray-500">Escanea este código con tu billetera para realizar la transferencia.</p>
+            <p className="mt-4 text-sm text-gray-500">Scan this code with your wallet to make the transfer.</p>
           </div>
         )}
       </div>
