@@ -10,9 +10,13 @@ const modules = {
 const questions = {
   beginner: [
     { question: "¿Quién creó Bitcoin?", options: ["Satoshi Nakamoto", "Vitalik Buterin", "Charlie Lee", "Elon Musk"], correctAnswer: "Satoshi Nakamoto" },
-    // Agrega más preguntas si es necesario
-  ],
+    { question: "¿Qué es una criptomoneda?", options: ["Dinero digital", "Una inversión tradicional", "Una tarjeta de crédito", "Un sistema bancario",], correctAnswer: "Dinero digital" },
+    { question: "¿Cómo se llama la unidad más pequeña de Bitcoin?", options: ["Satoshi", "Ether", "Ripple", "Litecoin"], correctAnswer: "Satoshi" },
+    { question: "¿Qué es un blockchain?", options: ["Un registro descentralizado", "Una red social", "Una criptomoneda", "Una billetera digital"], correctAnswer: "Un registro descentralizado" },
+    { question: "¿Cuántos Bitcoins existen en total?", options: ["21 millones", "100 millones", "50 millones", "1 millón"], correctAnswer: "21 millones" }
+  ]
 };
+
 
 const QuizComponent = () => {
   const [moduleContent, setModuleContent] = useState(null);
