@@ -51,7 +51,7 @@ export default function SidebarComponent() {
       {/* Estructura principal del Sidebar Menu */}
       <div className=" md:flex">
         <div className={
-          `fixed overflow-auto custom-scroll-bar h-full bg-primary-700 text-white transition-all duration-300 ease-in-out z-40
+          `fixed overflow-auto custom-scroll-bar h-full bg-primary-700 text-black transition-all duration-300 ease-in-out z-40
           ${sidebarMenuVisible ? 'w-full sm:w-64' : 'w-0'}`
         }>
           {sidebarMenuVisible && 
@@ -62,7 +62,7 @@ export default function SidebarComponent() {
                 </div>
                 <ul className='pt-5'>
                   {MenuRoutes.filter(Menu => Menu.meta?.show).map((Menu, index) => (
-                    <li key={index} className="px-2 cursor-pointer transition-all duration-300 ease-in-out text-white text-sm items-center py-2 hover:bg-[#f5f5f5] hover:text-primary-700">
+                    <li key={index} className="px-2 cursor-pointer transition-all duration-300 ease-in-out text-black text-sm items-center py-2 hover:bg-[#f5f5f5] hover:text-primary-700">
                       <NavLink to={Menu.path || '/'} className="flex justify-start items-center w-full p-2">
                         <span className="origin-left duration-200 material-icons">
                           {Menu.meta?.icon}
@@ -77,7 +77,7 @@ export default function SidebarComponent() {
               </div>                      
               <div className="absolute bottom-0 w-full mb-2">
                 <ul>
-                  <li className="px-2 flex cursor-pointer transition-all duration-300 ease-in-out text-white text-sm items-center py-2 hover:bg-[#f5f5f5] hover:text-primary-700"
+                  <li className="px-2 flex cursor-pointer transition-all duration-300 ease-in-out text-black text-sm items-center py-2 hover:bg-[#f5f5f5] hover:text-primary-700"
                     onClick={() => logoutSession()}>
                     <template className="flex justify-start items-center w-full p-2">
                       <span className="origin-left duration-200 material-icons">

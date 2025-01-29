@@ -21,8 +21,10 @@ const axiosInstance = createAxiosInstance();
 
 axiosInstance.interceptors.request.use((config) => {
     const token = useAuthStore.getState().decryptToken()?.token;
+    const refresh_token = useAuthStore.getState().decryptToken()?.refresh_token;
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
+        config.headers.refresh_token = `${refresh_token}`;
     }
     return config;
 });

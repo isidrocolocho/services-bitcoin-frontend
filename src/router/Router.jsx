@@ -46,20 +46,21 @@ export const routes = [
         ],
     },
     // Rutas protegidas
+    // {
+    //     path: "/medico",
+    //     guard: lazy(() => import('../guards/AuthGuard.jsx')),
+    //     Layout: lazy(() => import(/* webpackChunkName: "LazyLayoutAdminMedico" */ '../layouts/admin/Layout.jsx')),
+    //     children: [
+    //         ...routesMedico,
+    //     ],
+    // },
     {
-        path: "/medico",
-        guard: lazy(() => import('../guards/AuthGuard.jsx')),
-        Layout: lazy(() => import(/* webpackChunkName: "LazyLayoutAdminMedico" */ '../layouts/admin/Layout.jsx')),
-        children: [
-            ...routesMedico,
-        ],
-    },
-    {
-        path: "/paciente",
+        path: "/gestion",
         guard: lazy(() => import('../guards/AuthGuard.jsx')),
         Layout: lazy(() => import(/* webpackChunkName: "LazyLayoutAdmiPaciente" */ '../layouts/admin/Layout.jsx')),
         children: [
             ...routesPaciente,
+            ...routesMedico,
         ],
     },
 ];
