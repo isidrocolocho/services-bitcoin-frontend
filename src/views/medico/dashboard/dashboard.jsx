@@ -72,7 +72,7 @@ export default function Dashboard() {
   return (
     <div className="flex min-h-screen overflow-hidden" style={{ backgroundImage: "url('/images/sectionServicios.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
       {/* Menú lateral */}
-      <aside className={`bg-teal-600 text-white flex flex-col justify-between py-6 transition-all duration-300 ${isMenuOpen ? "w-64" : "w-16"}`}>
+      <aside className={`bg-green-800 text-white flex flex-col justify-between py-6 transition-all duration-300 ${isMenuOpen ? "w-64" : "w-16"}`}>
         <div>
           {/* Botón para abrir/cerrar el menú */}
           <button className="text-white px-4 py-2" onClick={toggleMenu} aria-label="Toggle menu">
@@ -81,21 +81,21 @@ export default function Dashboard() {
 
           {/* Opciones del menú */}
           <ul className="mt-8 space-y-6">
-            <li className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer" onClick={() => navigate("/catalogo")}>
+            <li className="flex items-center px-4 space-x-4 hover:bg-green-700 cursor-pointer" onClick={() => navigate("/catalogo")}>
               <FontAwesomeIcon icon={faBook} className="text-2xl" />
-              {isMenuOpen && <span className="text-lg">Catálogo</span>}
+              {isMenuOpen && <span className="text-lg">Catalog</span>}
             </li>
-            <li className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer" onClick={() => navigate("/CrearTransferencia")}>
+            <li className="flex items-center px-4 space-x-4 hover:bg-green-700 cursor-pointer" onClick={() => navigate("/CrearTransferencia")}>
               <FontAwesomeIcon icon={faCalendarPlus} className="text-2xl" />
-              {isMenuOpen && <span className="text-lg">Crear transferencia</span>}
+              {isMenuOpen && <span className="text-lg">Create transfer</span>}
             </li>
-            <li className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer" onClick={() => navigate("/ProcesosRealizados")}>
+            <li className="flex items-center px-4 space-x-4 hover:bg-green-700 cursor-pointer" onClick={() => navigate("/ProcesosRealizados")}>
               <FontAwesomeIcon icon={faHistory} className="text-2xl" />
-              {isMenuOpen && <span className="text-lg">Historial de Procesos Realizados</span>}
+              {isMenuOpen && <span className="text-lg">Transaction history</span>}
             </li>
-            <li className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer" onClick={() => navigate("/calendario")}>
+            <li className="flex items-center px-4 space-x-4 hover:bg-green-700 cursor-pointer" onClick={() => navigate("/calendario")}>
               <FontAwesomeIcon icon={faCalendarAlt} className="text-2xl" />
-              {isMenuOpen && <span className="text-lg">Calendario</span>}
+              {isMenuOpen && <span className="text-lg">Calendar</span>}
             </li>
           </ul>
         </div>
@@ -113,7 +113,7 @@ export default function Dashboard() {
             </button>
             <button className="text-white flex items-center">
               <FontAwesomeIcon icon={faCog} className="text-xl" />
-              {isMenuOpen && <span className="ml-2">Ajustes</span>}
+              {isMenuOpen && <span className="ml-2">Settings</span>}
             </button>
           </div>
         </div>
@@ -126,19 +126,19 @@ export default function Dashboard() {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Dashboard de Wallet</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-              <h3 className="text-lg font-semibold">Sats Recibidos</h3>
+              <h3 className="text-lg font-semibold">Received sats</h3>
               <p className="text-2xl font-bold text-green-600">{walletData.received} Sats</p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-              <h3 className="text-lg font-semibold">Sats Enviados</h3>
+              <h3 className="text-lg font-semibold">Sent sats</h3>
               <p className="text-2xl font-bold text-red-600">{walletData.sent} Sats</p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-              <h3 className="text-lg font-semibold">Sats Ganados</h3>
+              <h3 className="text-lg font-semibold">Sent sats</h3>
               <p className="text-2xl font-bold text-blue-600">{walletData.earned} Sats</p>
             </div>
             <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-              <h3 className="text-lg font-semibold">Saldo Total (BTC)</h3>
+              <h3 className="text-lg font-semibold">Total balance (BTC)</h3>
               <p className="text-2xl font-bold text-indigo-600">{walletData.balance} BTC</p>
               <p className="text-sm text-gray-600">${(walletData.balance * walletData.btcPrice).toFixed(2)}</p>
             </div>
@@ -147,7 +147,7 @@ export default function Dashboard() {
 
         {/* Historial de transacciones */}
         <section>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Historial de Transacciones</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Total balance</h2>
           <div className="bg-white rounded-lg shadow-lg p-6 overflow-auto">
             {/* Tu código de transacciones aquí */}
           </div>
