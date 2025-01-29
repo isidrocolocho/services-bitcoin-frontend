@@ -68,10 +68,10 @@ const Home = () => {
                   : "Already knowledgeable about Bitcoin? Access advanced information and resources."}
               </p>
               <Link
-                to={index === 0 ? "/quiz" : index === 1 ? "/dashboard" : index === 2 ? "/services" : "/advanced"}
+                to={index === 0 ? "/quiz" : index === 1 ? "/dashboard" : index === 2 ? "/Servicios" : "/advanced"}
                 className="bg-[#5E8F34] text-[#F2F2F2] py-2 px-4 rounded-full hover:bg-[#0F3715] transition duration-300"
               >
-                {index === 0 ? "Start Quiz" : index === 1 ? "Go to Dashboard" : index === 2 ? "View Services" : "Go to Expert Page"}
+                {index === 0 ? "Start Quiz" : index === 1 ? "Go to Dashboard" : index === 2 ? "View Servicios" : "Go to Expert Page"}
               </Link>
             </div>
           ))}
