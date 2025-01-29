@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Testimonios from "./Testimonios"; // Importa el componente de testimonios si está en el mismo directorio
 
 export default function Home() {
@@ -49,9 +50,9 @@ export default function Home() {
             experiencia médica con características clave y<br />
             ventajas exclusivas.
           </p>
-          <a href="#" className="inline-block mt-6 text-teal-600 hover:underline font-medium">
+          <Link to="#" className="inline-block mt-6 text-teal-600 hover:underline font-medium">
             Más Información →
-          </a>
+          </Link>
         </div>
 
         <div className="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center items-center">
