@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-[#0F3715]">
+    <header className="bg-blue-700">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo */}
         <div>
@@ -25,19 +25,19 @@ const Navbar = () => {
             to="/" 
             className="text-[#f2f2f2] font-bold hover:text-[#CCBB8E]"
           >
-            Inicio
+            Welcome
           </Link>
           <Link 
             to="/somos" 
             className="text-[#f2f2f2] font-bold hover:text-[#CCBB8E]"
           >
-            ¿Quiénes somos?
+            About Us
           </Link>
           <Link 
             to="/servicios" 
             className="text-[#f2f2f2] font-bold hover:text-[#CCBB8E]"
           >
-            Servicios
+            Services
           </Link>
         </nav>
 
@@ -47,13 +47,13 @@ const Navbar = () => {
             to="/registro" 
             className="border border-gray-500 bg-[#f2f2f2] px-4 py-2 rounded-md hover:bg-gray-400"
           >
-            Registrarse
+            Sign Up
           </Link>
           <Link 
             to="/login" 
             className="bg-[#CCBB8E] text-black px-4 py-2 rounded-md hover:bg-[#BF8D30]"
           >
-            Iniciar Sesión
+            LogIn
           </Link>
         </div>
 
