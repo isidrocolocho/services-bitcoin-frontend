@@ -1,40 +1,45 @@
 import React from "react";
+import 'typeface-poppins';
+
 
 export default function AboutUs() {
   return (
+    
     <div>
-      <section
-        className="relative flex flex-col lg:flex-row items-center justify-center h-auto lg:h-screen bg-white"
+      <section 
+        className="relative flex flex-col lg:flex-row items-center justify-center h-auto lg:h-screen bg-[#CCBB8E] " 
       >
         {/* Imagen izquierda */}
-        <div className="w-full lg:w-1/4 p-4 flex justify-center">
+        <div  data-aos="zoom-in-down"className="w-full lg:w-1/4 p-4 flex justify-center bg-[#CCBB8E]">
           <img
-            src="/images/doctor.png"
+            src="/images/us.jpg"
             alt="Doctor"
-            className="w-auto h-auto max-w-[200px] sm:max-w-[300px] lg:max-w-[350px] max-h-[300px] sm:max-h-[400px] lg:max-h-[450px] rounded-lg"
+            className="w-auto h-auto max-w-[200px] sm:max-w-[300px] lg:max-w-[350px] max-h-[300px] sm:max-h-[400px] lg:max-h-[450px] rounded-lg "
           />
         </div>
 
-        {/* Texto centrado */}
         <div className="w-full lg:w-2/4 p-6 text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-verde-aqua italic">
-            Conectando
-          </h1>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
-            Pacientes
-          </h1>
-          <p className="mt-4 text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-            Unimos tecnología y salud para transformar tu experiencia médica. Nuestra
-            plataforma te permite encontrar especialistas, agendar citas fácilmente y
-            gestionar tu bienestar de manera eficiente, segura y accesible desde
-            cualquier lugar.
-          </p>
-        </div>
+  <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold text-[#0F3715] poppins-medium">
+    The future of payments
+  </h1>
+  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black poppins-medium">
+    powered by Bitcoin today
+  </h1>
+  <br />
+  <p className="mt-4 text-base sm:text-lg lg:text-xl text-gray-900 leading-relaxed text-justify bold">
+    At SatoshiLabs, we’re changing the way people offer and hire services. Discover professionals, manage hires easily, and pay quickly and securely with Bitcoin using Lightning Network.
+    <br />
+    <br />
+    We believe in the decentralized economy, which is why we offer discounts and cashback when paying with sats. We connect technology and trust for a modern and accessible experience.
+  </p>
+</div>
+
+
 
         {/* Imagen derecha */}
         <div className="w-full lg:w-1/4 p-4 flex justify-center">
           <img
-            src="/images/Cirugia.png"
+            src="/images/ser.jpg"
             alt="Cirugía"
             className="w-auto h-auto max-w-[200px] sm:max-w-[300px] lg:max-w-[350px] max-h-[300px] sm:max-h-[400px] lg:max-h-[450px] rounded-lg"
           />
@@ -43,53 +48,38 @@ export default function AboutUs() {
 
 
 
-      <section className="bg-azul-navy text-white py-12 px-4">
-        <h2 className="text-center text-6xl italic font-bold mb-8">¿Quiénes Somos?</h2>
+      <section className="bg-[#0F3715] text-[#CCBB8E] py-12 px-4">
+        <h2 className="text-center text-6xl font-bold mb-8"> Who We Are?</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Visión */}
-          <div className="bg-azul-navy p-6 rounded-3xl border-2 border-white">
-            <h3 className="text-3xl font-bold mb-4">Visión</h3>
-            <p className="mb-4">
-              Facilitar el acceso a servicios médicos de calidad a través de una
-              plataforma digital intuitiva y eficiente, conectando pacientes con
-              especialistas de manera rápida, segura y accesible.
-            </p>
-            <img
-              src="/images/DocPaciente.jpg"
-              alt="Doctor and patient"
-              className="w-full rounded-lg mt-4"
-            />
-          </div>
+{/* Vision */}
+<div className="bg-[#0F3715] p-6 rounded-3xl border-2 border-[#CCBB8E]">
+  <h3 className="text-3xl font-bold mb-4">Vision</h3>
+  <p className="mb-4 text-justify">
+    Our vision is to be the leading platform that transforms how people engage with services and payments, fostering a decentralized economy. We aim to build an innovative, accessible community, creating a positive global impact on transactions and payments.
+  </p>
 
-          {/* Misión */}
-          <div className="bg-azul-navy p-6 rounded-3xl border-2 border-white">
-            <h3 className="text-3xl font-bold mb-4">Misión</h3>
-            <p className="mb-4">
-              Ser la solución líder en la gestión de citas médicas en línea,
-              revolucionando la forma en que las personas interactúan con el
-              sistema de salud, promoviendo un acceso equitativo y transformando
-              la experiencia médica a nivel global.
-            </p>
-            <img
-              src="/images/MundoTech.jpg"
-              alt="Global map"
-              className="w-full rounded-lg mt-4"
-            />
-          </div>
+</div>
 
-          {/* Valores */}
-          <div className="bg-azul-navy p-6 rounded-3xl border-2 border-white">
-            <h3 className="text-3xl font-bold mb-4">Valores</h3>
-            <p className="mb-4">
-              Impulsamos la innovación, garantizamos accesibilidad para todos y
-              promovemos la confianza con un servicio seguro y transparente.
-            </p>
-            <img
-              src="/images/apreton.webp"
-              alt="Handshake"
-              className="w-full rounded-lg mt-4"
-            />
-          </div>
+{/* Mission */}
+<div className="bg-[#0F3715] p-6 rounded-3xl border-2 border-[#CCBB8E]">
+  <h3 className="text-3xl font-bold mb-4">Mission</h3>
+  <p className="mb-4 text-justify">
+    At SatoshiLabs, we're redefining how people offer and request services through a reliable and efficient platform. We provide fast, secure payments with unique benefits like cashback and discounts. Our goal is to simplify access to diverse services while ensuring a seamless, transparent, and valuable experience for all.
+  </p>
+
+</div>
+
+{/* Values */}
+<div className="bg-[#0F3715] p-6 rounded-3xl border-2 border-[#CCBB8E]">
+  <h3 className="text-3xl font-bold mb-4">Values</h3>
+  <p className="mb-4 text-justify">
+    We're committed to innovation and providing advanced tech solutions. Security is our priority, protecting user data and transactions. We promote sustainability through responsible payments and foster a community based on trust, respect, and transparency, rewarding users with fair incentives.
+  </p>
+
+</div>
+
+
         </div>
       </section>
 

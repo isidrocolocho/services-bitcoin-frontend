@@ -4,68 +4,63 @@ import { Link } from 'react-router-dom';
 export default function Servicios() {
     return (
         <div>
-            <section
-              className="py-16 px-6 md:px-20 flex items-center justify-between min-h-[110vh]"
-              style={{
-                backgroundImage: "url('/images/SectionServicios.png')",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
-            >
-              {/* Contenedor de texto */}
-              <div className="max-w-lg pb-28">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                  Servicios diseñados <br /> para tu salud y comodidad.
-                </h1>
-                <p className="text-base md:text-lg text-gray-700 mt-4">
-                  Explora una amplia gama de servicios diseñados para simplificar tu cuidado médico. Desde buscar especialistas hasta gestionar tus citas.
-                </p>
-                {/* Botones */}
-                <div className="flex flex-wrap gap-4 mt-6">
-                  <button className="bg-teal-500 text-white py-2 px-6 rounded-md shadow-md hover:bg-teal-600">
-                    ¿Por qué elegirnos?
-                  </button>
-                  <button className="border-2 border-gray-800 text-gray-800 py-2 px-6 rounded-md shadow-md hover:bg-gray-800 hover:text-white">
-                    ¿Cómo reservo una cita?
-                  </button>
-                </div>
-              </div>
+<section
+  className="py-16 px-6 md:px-20 flex items-center justify-center min-h-[90vh]"
+  style={{
+    backgroundImage: `linear-gradient(rgba(144, 238, 144, 0.7), rgba(144, 238, 144, 0.7)), url(/images/labs.jpg)`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  }}
 
-  {/* Imagen */}
-  <div className="hidden md:block pb-28">
-    <img
-      src="/images/DoctoraTel.webp"
-      alt="Doctora sonriente con celular"
-      className="rounded-lg shadow-lg w-auto h-60 md:h-72"
-    />
+  
+>
+  {/* Contenedor de texto */}
+  <div className="max-w-lg pb-28 text-center">
+  <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-5">
+ Services Designed for Your Comfort and Well-being.
+  </h1>
+  <p className="text-lg md:text-xl text-black mt-4 text-justify">
+    Discover a wide range of services crafted to simplify your daily life. From offering your own services to hiring what you need, all in one place. What sets us apart is our integration with Bitcoin: pay securely through Lightning wallets and enjoy exclusive benefits that only SatoshiLabs can offer.
+  </p>
+  {/* Botones */}
+  <div className="flex flex-wrap gap-4 mt-6 justify-center">
+    <button className="bg-[#0F3715] text-white py-2 px-6 rounded-md shadow-md hover:bg-[#5E8F34]">
+      Why Choose Us?
+    </button>
+    <button className="border-2 border-[#CCBB8E] bg-[#CCBB8E] text-gray-900 py-2 px-6 rounded-md shadow-md hover:bg-[#CCBB8E] hover:text-white">
+      How Do I Hire a Service?
+    </button>
   </div>
+</div>
+
 </section>
 
 
 
 
           
-            <section className="grid grid-cols-4 gap-8 px-8 py-12">
+            <section className="grid grid-cols-4 gap-8 px-8 py-12 bg-[#F2F2F2]">
               {/* Título a la izquierda */}
               <div className="col-span-4 md:col-span-2 row-span-2 flex items-center">
                 <h2 className="text-5xl md:text-7xl font-bold leading-tight pl-4">
-                  ¿Por qué elegirnos?
+                Why Choose Us?
                 </h2>
               </div>
 
               {/* Subtítulo a la derecha */}
               <div className="col-span-4 md:col-span-2 row-span-2 flex items-center justify-end">
                 <p className="text-lg text-gray-600 text-right pr-4">
-                  Descubre lo que hace que nuestra plataforma sea única y confiable
+
+                  Discover What Makes Our Platform Unique and Reliable
                 </p>
               </div>
 
               {/* Elemento 1 */}
               <div className="col-span-4 md:col-span-1 flex items-center">
                 <div className="space-y-4 pl-4">
-                  <h3 className="text-2xl md:text-3xl font-semibold">Búsqueda personalizada</h3>
-                  <p className="text-gray-500">Encuentra médicos según tus necesidades.</p>
+                  <h3 className="text-2xl md:text-3xl font-semibold">Personalized Search</h3>
+                  <p className="text-gray-500">Find Services Tailored to Your Needs.</p>
                 </div>
               </div>
               <div className="col-span-4 md:col-span-3 h-48">
@@ -79,9 +74,9 @@ export default function Servicios() {
               {/* Elemento 2 */}
               <div className="col-span-4 md:col-span-1 flex items-center">
                 <div className="space-y-4 pl-4">
-                  <h3 className="text-2xl md:text-3xl font-semibold">Gestión simplificada</h3>
+                  <h3 className="text-2xl md:text-3xl font-semibold">Simplified Management</h3>
                   <p className="text-gray-500">
-                    Cambia, cancela o confirma citas con unos pocos clics.
+                  Modify, cancel, or confirm your acquired service with just a few clicks.
                   </p>
                 </div>
               </div>
@@ -96,9 +91,9 @@ export default function Servicios() {
               {/* Elemento 3 */}
               <div className="col-span-4 md:col-span-1 flex items-center">
                 <div className="space-y-4 pl-4">
-                  <h3 className="text-2xl md:text-3xl font-semibold">Accesibilidad total</h3>
+                  <h3 className="text-2xl md:text-3xl font-semibold">Total Accessibility</h3>
                   <p className="text-gray-500">
-                    Busca y gestiona citas desde cualquier dispositivo.
+                  Search and manage your service from any device.
                   </p>
                 </div>
               </div>
@@ -111,13 +106,13 @@ export default function Servicios() {
               </div>
             </section>
 
-            <section className="bg-azul-navy text-white py-10 px-5">
+            <section className="bg-[#5E8F34] text-white py-10 px-5">
               <div className="max-w-5xl mx-auto text-center">
                 {/* Título y descripción */}
                 <div className="max-w-4xl mx-auto text-left px-6">
-                  <h2 className="text-5xl font-bold mb-6">¿Cómo reservo una cita?</h2>
+                  <h2 className="text-5xl font-bold mb-6">How Do I Acquire a Service?</h2>
                   <p className="mb-12 text-lg">
-                    Sigue estos sencillos pasos y programa tu próxima consulta en minutos
+                  Follow these simple steps and schedule your next service in minutes.
                   </p>
                 </div>
 
@@ -144,8 +139,7 @@ export default function Servicios() {
                       {/* Texto: Ocupa 3 columnas de la cuarta fila */}
                       <div className="row-span-1 col-span-3 flex items-center">
                         <p className="text-sm md:text-base">
-                          Crea una cuenta o accede con tus credenciales en minutos. Es el primer
-                          paso para disfrutar de todos nuestros servicios.
+                          Create an account or sign in with your credentials in minutes. It's the first step to enjoy all our services.
                         </p>
                       </div>
                     </div>
@@ -170,8 +164,7 @@ export default function Servicios() {
                       {/* Texto */}
                       <div className="row-span-1 col-span-3 flex items-center">
                         <p className="text-sm md:text-base">
-                          Usa la búsqueda avanzada para encontrar médicos por especialidad,
-                          ubicación o disponibilidad. Todo a tu alcance de forma rápida y fácil.
+                        Use advanced search to find services based on your needs, such as location or availability. Everything at your fingertips, quickly and easily.
                         </p>
                       </div>
                     </div>
@@ -196,8 +189,8 @@ export default function Servicios() {
                       {/* Texto */}
                       <div className="row-span-1 col-span-3 flex items-center">
                         <p className="text-sm md:text-base">
-                          Selecciona el horario ideal desde nuestro calendario interactivo,
-                          adaptado a tu rutina.
+
+                      Select the ideal time for your service based on your preferences from our interactive calendar, tailored to your routine. 
                         </p>
                       </div>
                     </div>
@@ -222,15 +215,14 @@ export default function Servicios() {
                       {/* Texto */}
                       <div className="row-span-1 col-span-3 flex items-center">
                         <p className="text-sm md:text-base">
-                          Revisa los detalles y confirma tu cita. Recibirás una notificación con
-                          toda la información necesaria.
+                        Review the details and confirm your acquired service. You will receive a notification with all the necessary information.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
                 {/* Botón de llamada a la acción */}
-                <button className="mt-12 bg-azul-navy text-white font-bold py-3 px-8 rounded-xl border-2 border-white hover:bg-white hover:text-azul-navy hover:border-azul-navy transition-colors duration-300">
+                <button className="mt-12 bg-[#5E8F34] text-white font-bold py-3 px-8 rounded-xl border-2 border-white hover:bg-white hover:text-[#0F3715] hover:border-[#0F3715] transition-colors duration-300">
                   <Link to="/registro" className="block w-full h-full text-center">
                     Regístrate
                   </Link>
