@@ -1,9 +1,10 @@
-import {routesMedico} from "../views/medico/router/Router";
-import {routesPaciente} from "../views/paciente/router/Router";
-import {routesLanding} from "../views/landing/router/Router";
-import {Fragment, Suspense, lazy} from "react";
-import {Outlet, Route} from "react-router-dom";
+import { routesMedico } from "../views/medico/router/Router";
+import { routesPaciente } from "../views/paciente/router/Router";
+import { routesLanding } from "../views/landing/router/Router";
+import { Fragment, Suspense, lazy } from "react";
+import { Outlet, Route } from "react-router-dom";
 import LoaderSuspenseComponent from "../components/core/LoaderComponent.jsx";
+import QuizComponent from '../components/quiz/QuizComponent.jsx'; 
 
 
 const renderRoute = (route, index) => {
@@ -29,7 +30,6 @@ const renderRoute = (route, index) => {
         </Route>
     );
 };
-
 
 export const renderRoutesGlobal = (routes) => {
     return routes.map(renderRoute);
@@ -63,7 +63,9 @@ export const routes = [
             ...routesMedico,
         ],
     },
+    // Agregar la ruta del Quiz
+    {
+        path: "/quiz",  // Ruta para el quiz
+        Component: QuizComponent,  // El componente a renderizar
+    }
 ];
-
-
-

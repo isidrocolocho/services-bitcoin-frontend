@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,68 +9,91 @@ import {
   faCalendarAlt,
   faSignOutAlt,
   faCog,
+  faWallet,
+  faArrowUp,
+  faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Login() {
+export default function Dashboard() {
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Controla la visibilidad del menú
   const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para saber si el usuario está logueado
+  const [walletData, setWalletData] = useState({
+    balance: 2.5, // Bitcoin
+    received: 10,
+    sent: 5,
+    earned: 3,
+    btcPrice: 45000, // Precio en USD por BTC
+  });
+
+  const [selectedTransaction, setSelectedTransaction] = useState(null);
+
+  // Verificar si el usuario está logueado
+  useEffect(() => {
+    // login
+    const userLoggedIn = localStorage.getItem("userLoggedIn");
+    if (userLoggedIn) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const transactionDetails = [
+    {
+      date: "2025-01-28",
+      description: "Pago recibido de Juan Oscar",
+      amount: "+0.1 BTC",
+      sender: "Juan Oscar",
+      time: "14:35:00",
+    },
+    {
+      date: "2025-01-27",
+      description: "Enviado a Usuario X",
+      amount: "-0.05 BTC",
+      sender: "Sistema",
+      time: "10:15:00",
+    },
+  ];
+
+  const handleTransactionClick = (transaction) => {
+    setSelectedTransaction(transaction);
+  };
+
+  // Manejar el logout
+  const handleLogout = () => {
+    localStorage.removeItem("userLoggedIn"); // Eliminar el estado de login
+    setIsLoggedIn(false);
+    navigate("/login"); // Redirigir a la página de login
+  };
+
   return (
-    <div
-      className="flex min-h-screen overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/sectionServicios.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="flex min-h-screen overflow-hidden" style={{ backgroundImage: "url('/images/sectionServicios.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
       {/* Menú lateral */}
-      <aside
-        className={`bg-teal-600 text-white flex flex-col justify-between py-6 transition-all duration-300 ${
-          isMenuOpen ? "w-64" : "w-16"
-        }`}
-      >
+      <aside className={`bg-teal-600 text-white flex flex-col justify-between py-6 transition-all duration-300 ${isMenuOpen ? "w-64" : "w-16"}`}>
         <div>
           {/* Botón para abrir/cerrar el menú */}
-          <button
-            className="text-white px-4 py-2"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
+          <button className="text-white px-4 py-2" onClick={toggleMenu} aria-label="Toggle menu">
             <FontAwesomeIcon icon={faBars} className="text-2xl" />
           </button>
 
           {/* Opciones del menú */}
           <ul className="mt-8 space-y-6">
-            <li
-              className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer"
-              onClick={() => navigate("/catalogo")}
-            >
+            <li className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer" onClick={() => navigate("/catalogo")}>
               <FontAwesomeIcon icon={faBook} className="text-2xl" />
               {isMenuOpen && <span className="text-lg">Catálogo</span>}
             </li>
-            <li
-              className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer"
-              onClick={() => navigate("/crear-citas")}
-            >
+            <li className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer" onClick={() => navigate("/CrearTransferencia")}>
               <FontAwesomeIcon icon={faCalendarPlus} className="text-2xl" />
-              {isMenuOpen && <span className="text-lg">Crear cita</span>}
+              {isMenuOpen && <span className="text-lg">Crear transferencia</span>}
             </li>
-            <li
-              className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer"
-              onClick={() => navigate("/citas-anteriores")}
-            >
+            <li className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer" onClick={() => navigate("/ProcesosRealizados")}>
               <FontAwesomeIcon icon={faHistory} className="text-2xl" />
-              {isMenuOpen && <span className="text-lg">Citas Anteriores</span>}
+              {isMenuOpen && <span className="text-lg">Historial de Procesos Realizados</span>}
             </li>
-            <li
-              className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer"
-              onClick={() => navigate("/calendario")}
-            >
+            <li className="flex items-center px-4 space-x-4 hover:bg-teal-700 cursor-pointer" onClick={() => navigate("/calendario")}>
               <FontAwesomeIcon icon={faCalendarAlt} className="text-2xl" />
               {isMenuOpen && <span className="text-lg">Calendario</span>}
             </li>
@@ -83,93 +106,50 @@ export default function Login() {
             <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
             {isMenuOpen && <p className="font-semibold">Juan Oscar</p>}
           </div>
-          <div className="flex justify-between">
-            <button className="text-white">
+          <div className="flex justify-between items-center">
+            <button className="text-white" onClick={handleLogout}>
               <FontAwesomeIcon icon={faSignOutAlt} className="text-xl" />
+              {isMenuOpen && <span className="ml-2">Log Out</span>}
             </button>
-            <button className="text-white">
+            <button className="text-white flex items-center">
               <FontAwesomeIcon icon={faCog} className="text-xl" />
+              {isMenuOpen && <span className="ml-2">Ajustes</span>}
             </button>
           </div>
         </div>
       </aside>
 
       {/* Contenido principal */}
-      <main className={`flex-1 bg-white bg-opacity-75 p-6 md:p-10 flex flex-col`}>
-        {/* Sección de servicios */}
-        <section className="flex-grow mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
-            Nuestros servicios
-          </h2>
+      <main className="flex-1 bg-white bg-opacity-75 p-6 md:p-10 flex flex-col">
+        {/* Dashboard de la wallet */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Dashboard de Wallet</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <img
-                src="/images/dermatologia.jpg"
-                alt="Dermatología"
-                className="rounded-lg mx-auto mb-2 shadow-lg w-full h-48 object-cover"
-              />
-              <p className="font-medium">Dermatología</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold">Sats Recibidos</h3>
+              <p className="text-2xl font-bold text-green-600">{walletData.received} Sats</p>
             </div>
-            <div className="text-center">
-              <img
-                src="/images/cardiologia.jpeg"
-                alt="Cardiología"
-                className="rounded-lg mx-auto mb-2 shadow-lg w-full h-48 object-cover"
-              />
-              <p className="font-medium">Cardiología</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold">Sats Enviados</h3>
+              <p className="text-2xl font-bold text-red-600">{walletData.sent} Sats</p>
             </div>
-            <div className="text-center">
-              <img
-                src="/images/nutricion.jpeg"
-                alt="Nutrición"
-                className="rounded-lg mx-auto mb-2 shadow-lg w-full h-48 object-cover"
-              />
-              <p className="font-medium">Nutrición</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold">Sats Ganados</h3>
+              <p className="text-2xl font-bold text-blue-600">{walletData.earned} Sats</p>
             </div>
-            <div className="text-center">
-              <img
-                src="/images/odontologia.jpeg"
-                alt="Odontología"
-                className="rounded-lg mx-auto mb-2 shadow-lg w-full h-48 object-cover"
-              />
-              <p className="font-medium">Odontología</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <h3 className="text-lg font-semibold">Saldo Total (BTC)</h3>
+              <p className="text-2xl font-bold text-indigo-600">{walletData.balance} BTC</p>
+              <p className="text-sm text-gray-600">${(walletData.balance * walletData.btcPrice).toFixed(2)}</p>
             </div>
           </div>
         </section>
 
-        {/* Sección de equipo */}
+        {/* Historial de transacciones */}
         <section>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
-            Nuestro equipo
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <img
-                src="/images/mario.jpeg"
-                alt="Dr. Mario Argueta"
-                className="rounded-full mx-auto mb-2 shadow-lg w-32 h-32 object-cover"
-              />
-              <p className="font-medium">Dr. Mario Argueta</p>
-              <p className="text-sm">Especialista en cardiología</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/images/jessica.jpeg"
-                alt="Dra. Jessica Moran"
-                className="rounded-full mx-auto mb-2 shadow-lg w-32 h-32 object-cover"
-              />
-              <p className="font-medium">Dra. Jessica Moran</p>
-              <p className="text-sm">Especialista en nutrición</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/images/luis.jpeg"
-                alt="Dr. Luis López"
-                className="rounded-full mx-auto mb-2 shadow-lg w-32 h-32 object-cover"
-              />
-              <p className="font-medium">Dr. Luis López</p>
-              <p className="text-sm">Especialista en dermatología</p>
-            </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Historial de Transacciones</h2>
+          <div className="bg-white rounded-lg shadow-lg p-6 overflow-auto">
+            {/* Tu código de transacciones aquí */}
           </div>
         </section>
       </main>
