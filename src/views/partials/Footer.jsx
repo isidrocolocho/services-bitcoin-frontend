@@ -8,22 +8,26 @@ const Footer = () => {
       <div className="w-full max-w-5xl flex flex-col md:flex-row items-center md:justify-between px-4">
         {/* Texto y Logo */}
         <div className="flex-1 text-center md:text-left mb-6 md:mb-0">
-          <p className="text-xl md:text-2xl font-medium text-[#f2f2f2] leading-relaxed">
-            
+          <p className="text-xl md:text-2xl font-medium text-[#F2F2F2] leading-relaxed">
+            Bitcoin: Libertad financiera para todos.
           </p>
           <Link to="/" className="mt-4 inline-block">
-            <img src="/images/SatoshiLog.png" alt="Logo" className="h-10 w-auto mx-auto md:mx-0" />
+            <img
+              src="/images/SatoshiLog.png"
+              alt="Logo"
+              className="h-10 w-auto mx-auto md:mx-0"
+            />
           </Link>
         </div>
 
         {/* Botones */}
         <div className="flex flex-col md:flex-row gap-4">
-          <button className="flex items-center justify-center gap-2 px-6 py-2 border border-[#f2f2f2] text-[#f2f2f2] font-bold text-sm rounded transition hover:bg-[#CCBB8E] hover:text-black">
-            Contact Us
+          <button className="flex items-center justify-center gap-2 px-6 py-2 border border-[#F2F2F2] text-[#F2F2F2] font-bold text-sm rounded transition hover:bg-[#CCBB8E] hover:text-[#0F3715]">
+            Contáctanos
             <span className="text-base transform rotate-45">➔</span>
           </button>
-          <button className="px-6 py-2 bg-[#CCBB8E] text-black font-bold text-sm rounded transition hover:bg-[#BF8D30]">
-            Information
+          <button className="px-6 py-2 bg-[#CCBB8E] text-[#0F3715] font-bold text-sm rounded transition hover:bg-[#BF8D30] hover:text-[#F2F2F2]">
+            Más información
           </button>
         </div>
       </div>
@@ -32,19 +36,22 @@ const Footer = () => {
       <div className="mt-8 flex gap-4 justify-center">
         <a
           href="#"
-          className="text-[#f2f2f2] text-xl transition hover:text-[#CCBB8E]"
+          className="text-[#F2F2F2] text-xl transition hover:text-[#CCBB8E]"
+          aria-label="Twitter"
         >
           <FiTwitter />
         </a>
         <a
           href="#"
-          className="text-[#f2f2f2] text-xl transition hover:text-[#CCBB8E]"
+          className="text-[#F2F2F2] text-xl transition hover:text-[#CCBB8E]"
+          aria-label="Instagram"
         >
           <FiInstagram />
         </a>
         <a
           href="#"
-          className="text-[#f2f2f2] text-xl transition hover:text-[#CCBB8E]"
+          className="text-[#F2F2F2] text-xl transition hover:text-[#CCBB8E]"
+          aria-label="Facebook"
         >
           <FiFacebook />
         </a>
