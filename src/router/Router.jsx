@@ -7,6 +7,8 @@ import LoaderSuspenseComponent from "../components/core/LoaderComponent.jsx";
 import QuizComponent from '../components/quiz/QuizComponent.jsx'; 
 
 
+
+
 const renderRoute = (route, index) => {
     const Component = route.Component || Fragment;
     const Layout = route.Layout || Fragment;
