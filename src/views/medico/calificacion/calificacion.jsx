@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 // Componente para mostrar estrellas (calificación)
 const StarRating = ({ rating }) => {
   const totalStars = 5;

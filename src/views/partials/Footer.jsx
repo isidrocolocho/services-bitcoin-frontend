@@ -35,27 +35,25 @@ const Footer = () => {
 
       {/* Redes sociales */}
       <div className="mt-8 flex gap-4 justify-center">
-        <a
-          href="#"
-          className="text-[#F2F2F2] text-xl transition hover:text-[#CCBB8E]"
-          aria-label="Twitter"
+        <Link
+          to="#"
+          className="text-gray-500 text-xl transition hover:text-[#10217D]"
         >
           <FiTwitter />
-        </a>
-        <a
-          href="#"
-          className="text-[#F2F2F2] text-xl transition hover:text-[#CCBB8E]"
-          aria-label="Instagram"
+        </Link>
+        <Link
+          to="#"
+          className="text-gray-500 text-xl transition hover:text-[#10217D]"
         >
           <FiInstagram />
-        </a>
-        <a
-          href="#"
-          className="text-[#F2F2F2] text-xl transition hover:text-[#CCBB8E]"
-          aria-label="Facebook"
+        </Link>
+        <Link
+          to="#"
+          className="text-gray-500 text-xl transition hover:text-[#10217D]"
+
         >
           <FiFacebook />
-        </a>
+        </Link>
       </div>
     </footer>
   );

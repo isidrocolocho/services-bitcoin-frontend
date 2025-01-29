@@ -25,7 +25,11 @@ yarn-error.log*
 
 package-lock.json
 
+<<<<<<< HEAD
 # Ignore Yarn files
 .yarn
 .yarn/*
 .yarnrc.yml
+=======
+yarn.lock
+>>>>>>> main

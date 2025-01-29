@@ -55,13 +55,14 @@ const storeApi = (set, get) => ({
         try {
             const {data, status} = await login(email, password);
             if (status === 200 || status === 201) {
+               
                 const object = {token: data.token, refresh_token: data.refresh_token, user: null};
-                set({status: 'authorized', token: encryptToken(object)});
+                set({status: 'authorized', token: encryptToken(object),   refresh_token: data.refresh_token});
                 // Traer información del usuario
                 const userInformacion = await userData();
                 if (userInformacion) {
                     object.user = userInformacion;
-                    set({status: 'authorized', token: encryptToken(object)});
+                    set({status: 'authorized', token: encryptToken(object),  refresh_token: data.refresh_token});
                 }
                 // useToastStore.getState().setToastActive(true, 'info', 'Inicio de sesión exitoso', 'Bienvenido', 5000);
                 onSuccess();
@@ -86,7 +87,7 @@ const storeApi = (set, get) => ({
             }
             const {token, refresh_token} = data.data;
             const object = {token: token, refresh_token: refresh_token, user: data_decrypt?.user};
-            set({status: 'authorized', token: encryptToken(object)});
+            set({status: 'authorized', token: encryptToken(object),refresh_token});
         } catch (error) {
             get().cleanStore();
         }
