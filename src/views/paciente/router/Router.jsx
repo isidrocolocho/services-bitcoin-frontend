@@ -4,25 +4,25 @@ export const routesPaciente = [
     {
         path: "calendario",
         name: "Calendario",
-        // meta: {
-        //     title: "Calendario",
-        //     icon: "dashboard",
-        //     requiresAuth: true,
-        //     show: true,
-        //     canAccess: ["VER_DASHBOARD"],
-        // },
+        meta: {
+            title: "Calendario",
+            icon: "Home",
+            requiresAuth: true,
+            show: true,
+            canAccess: ["VER_DASHBOARD"],
+        },
         Component: lazy(async () => await import("../Calendario/Calendario")),
     },
     {
         path: "catalogo",
         name: "Catalogo",
-        // meta: {
-        //     title: "Catalogo de medico",
-        //     icon: "dashboard",
-        //     requiresAuth: true,
-        //     show: true,
-        //     canAccess: ["VER_DASHBOARD"],
-        // },
+        meta: {
+            title: "Catalogo de medico",
+            icon: "Home",
+            requiresAuth: true,
+            show: true,
+            canAccess: ["VER_DASHBOARD"],
+        },
         Component: lazy(async () => await import("../Catalogo/Catalogo")),
     },
     {
@@ -40,37 +40,37 @@ export const routesPaciente = [
     {
         path: "CrearTransferencia",
         name: "CrearTransferencia",
-        // meta: {
-        //     title: "CrearTransferencia",
-        //     icon: "dashboard",
-        //     requiresAuth: true,
-        //     show: false,
-        //     canAccess: ["VER_DASHBOARD"],
-        // },
+        meta: {
+            title: "CrearTransferencia",
+            icon: "Home",
+            requiresAuth: true,
+            show: false,
+            canAccess: ["VER_DASHBOARD"],
+        },
         Component: lazy(() => import("../../paciente/Citas/CrearTransferencia.jsx")),
     },        
     {
         path: "perfil",
         name: "Perfil",
-        // meta: {
-        //     title: "Perfil",
-        //     icon: "dashboard",
-        //     requiresAuth: true,
-        //     show: false,
-        //     canAccess: ["VER_DASHBOARD"],
-        // },
+        meta: {
+            title: "Perfil",
+            icon: "Home",
+            requiresAuth: true,
+            show: false,
+            canAccess: ["VER_DASHBOARD"],
+        },
         Component: lazy(async () => await import("../perfil/perfil")),
     },
     {
         path: "*",
         name: "No encontrado",
-        // meta: {
-        //     title: "No encontrado",
-        //     icon: "error",
-        //     requiresAuth: true,
-        //     show: false,
-        //     canAccess: true,
-        // },
+        meta: {
+            title: "No encontrado",
+            icon: "error",
+            requiresAuth: true,
+            show: false,
+            canAccess: true,
+        },
         Component: lazy(async () => await import("../../NoEncontrado")),
     }
 ];

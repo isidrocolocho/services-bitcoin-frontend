@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+//import Testimonios from "./Testimonios"; // Importa el componente de testimonios si está en el mismo directorio
 
 const Home = () => {
   return (
@@ -24,13 +25,18 @@ const Home = () => {
           <p className="mt-6 text-lg sm:text-center text-white">
             SatoshiLab is your all-in-one platform to explore the world of Bitcoin. Access up-to-date information, seamlessly connect with your wallet, and discover innovative Bitcoin-related services. Explore, connect, and unlock the power of Bitcoin in one place.
           </p>
-          <div className="mt-8 flex justify-center">
-            <a
-              href="#"
-              className="inline-block rounded-lg bg-[#BF8D30] px-6 py-3 text-base font-semibold text-black hover:bg-[#0F3715] transition duration-300"
-            >
-              Get Started →
-            </a>
+          <Link to="#" className="inline-block mt-6 text-teal-600 hover:underline font-medium">
+            Más Información →
+          </Link>
+        </div>
+
+        <div className="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center items-center">
+          <div className="w-full h-64 md:h-96 overflow-hidden">
+            <img
+              src="/images/DiseñoBeneficios.png"
+              alt="Collage Doctores"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
