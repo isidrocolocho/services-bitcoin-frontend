@@ -26,8 +26,8 @@ export const routesPaciente = [
         Component: lazy(async () => await import("../Catalogo/Catalogo")),
     },
     {
-        path: "citas-anteriores",
-        name: "CitasAnteriores",
+        path: "ProcesosRealizados",
+        name: "ProcesosRealizados",
         // meta: {
         //     title: "Citas Atendidas",
         //     icon: "dashboard",
@@ -35,20 +35,20 @@ export const routesPaciente = [
         //     show: true,
         //     canAccess: ["VER_DASHBOARD"],
         // },
-        Component: lazy(async () => await import("../Citas/CitasAnteriores")),
+        Component: lazy(async () => await import("../Citas/ProcesosRealizados.jsx")),
     },
     {
-        path: "crear-citas",
-        name: "CrearCitas",
+        path: "CrearTransferencia",
+        name: "CrearTransferencia",
         // meta: {
-        //     title: "Crear Citas",
+        //     title: "CrearTransferencia",
         //     icon: "dashboard",
         //     requiresAuth: true,
         //     show: false,
         //     canAccess: ["VER_DASHBOARD"],
         // },
-        Component: lazy(async () => await import("../Citas/CrearCitas")),
-    },
+        Component: lazy(() => import("../../paciente/Citas/CrearTransferencia.jsx")),
+    },        
     {
         path: "perfil",
         name: "Perfil",
