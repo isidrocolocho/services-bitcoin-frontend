@@ -6,7 +6,7 @@ export const routesPaciente = [
         name: "Calendario",
         meta: {
             title: "Calendario",
-            icon: "dashboard",
+            icon: "Home",
             requiresAuth: true,
             show: true,
             canAccess: ["VER_DASHBOARD"],
@@ -18,7 +18,7 @@ export const routesPaciente = [
         name: "Catalogo",
         meta: {
             title: "Catalogo de medico",
-            icon: "dashboard",
+            icon: "Home",
             requiresAuth: true,
             show: true,
             canAccess: ["VER_DASHBOARD"],
@@ -40,13 +40,13 @@ export const routesPaciente = [
     {
         path: "CrearTransferencia",
         name: "CrearTransferencia",
-        // meta: {
-        //     title: "CrearTransferencia",
-        //     icon: "dashboard",
-        //     requiresAuth: true,
-        //     show: false,
-        //     canAccess: ["VER_DASHBOARD"],
-        // },
+        meta: {
+            title: "CrearTransferencia",
+            icon: "Home",
+            requiresAuth: true,
+            show: false,
+            canAccess: ["VER_DASHBOARD"],
+        },
         Component: lazy(() => import("../../paciente/Citas/CrearTransferencia.jsx")),
     },        
     {
@@ -54,7 +54,7 @@ export const routesPaciente = [
         name: "Perfil",
         meta: {
             title: "Perfil",
-            icon: "dashboard",
+            icon: "Home",
             requiresAuth: true,
             show: false,
             canAccess: ["VER_DASHBOARD"],

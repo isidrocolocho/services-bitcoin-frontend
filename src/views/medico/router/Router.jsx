@@ -6,7 +6,7 @@ export const routesMedico = [
         name: "Dashboard",
         meta: {
             title: "Panel ",
-            icon: "dashboard",
+            icon: "Home",
             requiresAuth: false,
             show: true,
             canAccess: ["VER_DASHBOARD"],
@@ -18,7 +18,7 @@ export const routesMedico = [
         name: "Perfil",
         meta: {
             title: "Perfil de medico",
-            icon: "dashboard",
+            icon: "Home",
             requiresAuth: true,
             show: false,
             canAccess: ["VER_DASHBOARD"],
@@ -30,9 +30,9 @@ export const routesMedico = [
         name: "ProximasCitas",
         meta: {
             title: "Proximas citas de medico",
-            icon: "dashboard",
+            icon: "Home",
             requiresAuth: true,
-            show: false,
+            show: true,
             canAccess: ["VER_DASHBOARD"],
         },
         Component: lazy(async () => await import("../citas/proximasCitas")),
@@ -42,9 +42,9 @@ export const routesMedico = [
         name: "CitasAtendidas",
         meta: {
             title: "Citas Atendidas de medico",
-            icon: "dashboard",
+            icon: "Home",
             requiresAuth: true,
-            show: false,
+            show: true,
             canAccess: ["VER_DASHBOARD"],
         },
         Component: lazy(async () => await import("../citas/citasAtendidas")),
@@ -54,9 +54,9 @@ export const routesMedico = [
         name: "Calificaciones",
         meta: {
             title: "Calificaciones de medico",
-            icon: "dashboard",
+            icon: "Home",
             requiresAuth: true,
-            show: false,
+            show: true,
             canAccess: ["VER_DASHBOARD"],
         },
         Component: lazy(async () => await import("../calificacion/calificacion")),

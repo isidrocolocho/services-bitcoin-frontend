@@ -8,6 +8,8 @@ import { logout } from "../../views/client/auth/services/auth.service.js";
 import { useToastStore } from "../../store/toast.store.js";
 import useBreakpoints from "../../hooks/useBreakpoints.js";
 import { useLoaderStore } from '../../store/loader.store.js';
+import * as Icons from "@mui/icons-material";
+import { IconComponent } from "./IconComponent.jsx";
 
 const logo = "/logo512.png";
 
@@ -64,9 +66,16 @@ export default function SidebarComponent() {
                   {MenuRoutes.filter(Menu => Menu.meta?.show).map((Menu, index) => (
                     <li key={index} className="px-2 cursor-pointer transition-all duration-300 ease-in-out text-black text-sm items-center py-2 hover:bg-[#f5f5f5] hover:text-primary-700">
                       <NavLink to={Menu.path || '/'} className="flex justify-start items-center w-full p-2">
-                        <span className="origin-left duration-200 material-icons">
+                        {/* <span className="origin-left duration-200 material-icons">
                           {Menu.meta?.icon}
-                        </span>
+                        </span> */}
+                        <IconComponent 
+                            className={
+                                `transition-all duration-300 ease-in-out cursor-pointer z-50`
+                            }
+                            name={Menu.meta?.icon}
+                            size={35} 
+                        />
                         <span className="origin-left duration-200 pl-4">
                           {Menu.meta?.title}
                         </span>
@@ -79,14 +88,12 @@ export default function SidebarComponent() {
                 <ul>
                   <li className="px-2 flex cursor-pointer transition-all duration-300 ease-in-out text-black text-sm items-center py-2 hover:bg-[#f5f5f5] hover:text-primary-700"
                     onClick={() => logoutSession()}>
-                    <template className="flex justify-start items-center w-full p-2">
-                      <span className="origin-left duration-200 material-icons">
-                        logout
-                      </span>
+                    <div className="flex justify-start items-center w-full p-2">
+                      <Icons.Logout className="origin-left duration-200 material-icons" />
                       <span className="origin-left duration-200 pl-4">
                         Cerrar sesión
                       </span>
-                    </template>
+                    </div>
                   </li>
                 </ul>
               </div>    

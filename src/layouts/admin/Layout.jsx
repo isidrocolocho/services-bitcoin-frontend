@@ -16,13 +16,13 @@ const LayoutAdmin = ({children}) => {
                 ${sidebarMenuVisible ? 'ml-0 sm:ml-64 flex justify-end sm:justify-normal' : 'ml-0'}`                        
             }>
                 <div className="absolute transition-all duration-300 ease-in-out p-2 flex overflow-hidden">
-                    <div className="card flex justify-end items-end z-40">
+                    <div className="card flex justify-end items-end z-40 bg-white">
                         <IconComponent 
                             className={
                                 `transition-all duration-300 ease-in-out cursor-pointer z-50
-                                ${breakpoints.smAndUp ? sidebarMenuVisible ? '!text-primary-700' : '!text-primary-700' : sidebarMenuVisible ? '!text-white' : '!text-primary-700'}`
+                                ${breakpoints.smAndUp ? sidebarMenuVisible ? '!text-primary-700' : '!text-primary-700' : sidebarMenuVisible ? '!text-black' : '!text-primary-700'}`
                             }
-                            name={sidebarMenuVisible ? (breakpoints.smAndUp ? 'menu_open' : 'close') : 'menu'}
+                            name={sidebarMenuVisible ? (breakpoints.smAndUp ? 'Close' : 'Close') : 'Menu'}
                             size={35} 
                             onClick={() => {
                                 toggleSidebarMenu();

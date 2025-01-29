@@ -1,10 +1,6 @@
 import React from "react";
-import Icon from "@mui/material/Icon";
-
-// Iconos de Material UI que pueden ser utilizados:
-// https://mui.com/material-ui/material-icons/?query=eye&theme=Outlined
-
-
+import { SvgIcon } from "@mui/material";
+import * as Icons from "@mui/icons-material";
 
 export const IconComponent = ({
   name,
@@ -15,17 +11,20 @@ export const IconComponent = ({
   size = undefined,
   onClick
 }) => {
+  const Icon = Icons[name];
+
+  if (!Icon) {
+    console.error(`Icon with name "${name}" does not exist in @mui/icons-material`);
+    return null;
+  }
+
   return (
-    <Icon 
+    <SvgIcon 
+      component={Icon} 
       fontSize={fontSize} 
       onClick={onClick} 
-      className={`
-        material-icons-${iconStyle}
-        ${className}
-      `} 
-      sx={{ color, fontSize: size }}
-    >
-      {name}
-    </Icon>
+      className={className} 
+      sx={{ color, fontSize: size }} 
+    />
   );
 };

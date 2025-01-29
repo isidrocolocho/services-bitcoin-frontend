@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Testimonios from "./Testimonios"; // Importa el componente de testimonios si está en el mismo directorio
+//import Testimonios from "./Testimonios"; // Importa el componente de testimonios si está en el mismo directorio
 
 const Home = () => {
   return (
