@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 py-8 flex flex-col items-center font-sans">
+    <footer className="bg-[#0F3715] py-8 flex flex-col items-center font-sans">
       <div className="w-full max-w-5xl flex flex-col md:flex-row items-center md:justify-between px-4">
         {/* Texto y Logo */}
         <div className="flex-1 text-center md:text-left mb-6 md:mb-0">
           <p className="text-xl md:text-2xl font-medium text-[#f2f2f2] leading-relaxed">
-          SatoshiLab
+            
           </p>
           <Link to="/" className="mt-4 inline-block">
             <img src="/images/SatoshiLog.png" alt="Logo" className="h-10 w-auto mx-auto md:mx-0" />
