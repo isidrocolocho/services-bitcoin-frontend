@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Servicios() {
     return (
@@ -228,7 +229,38 @@ export default function Servicios() {
                   </Link>
                 </button>
               </div>
-            </section>
+            </motion.div>
+          ))}
         </div>
-    )
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-r from-teal-600 to-green-500 text-white py-16 px-5 text-center">
+        <motion.h2
+          className="text-4xl font-extrabold mb-6"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Get started today!
+        </motion.h2>
+        <motion.p
+          className="mb-8 text-lg max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          Join our community and transform your Bitcoin knowledge into rewards and new opportunities.
+        </motion.p>
+        <motion.button
+          className="bg-white text-teal-700 font-bold py-3 px-8 rounded-xl border-2 border-white hover:bg-teal-700 hover:text-white transition-all"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Link to="/registro">Sign up</Link>
+        </motion.button>
+      </section>
+    </div>
+  );
 }
