@@ -2,26 +2,64 @@ import React, { useState, useEffect } from "react";
 
 // Simulación de los módulos y preguntas
 const modules = {
-  1: { content: "Bitcoin es una moneda digital que permite transacciones sin intermediarios. Fue creado por Satoshi Nakamoto." },
+  1: {
+    content:
+      "Bitcoin es una moneda digital que permite transacciones sin intermediarios. Fue creado por Satoshi Nakamoto.",
+  },
   // Agrega más módulos si es necesario
 };
 
 const questions = {
   beginner: [
-    { question: "¿Quién creó Bitcoin?", options: ["Satoshi Nakamoto", "Vitalik Buterin", "Charlie Lee", "Elon Musk"], correctAnswer: "Satoshi Nakamoto" },
-    { question: "¿Qué es una criptomoneda?", options: ["Dinero digital", "Una inversión tradicional", "Una tarjeta de crédito", "Un sistema bancario"], correctAnswer: "Dinero digital" },
-    { question: "¿Cómo se llama la unidad más pequeña de Bitcoin?", options: ["Satoshi", "Ether", "Ripple", "Litecoin"], correctAnswer: "Satoshi" },
-    { question: "¿Qué es un blockchain?", options: ["Un registro descentralizado", "Una red social", "Una criptomoneda", "Una billetera digital"], correctAnswer: "Un registro descentralizado" },
-    { question: "¿Cuántos Bitcoins existen en total?", options: ["21 millones", "100 millones", "50 millones", "1 millón"], correctAnswer: "21 millones" }
-  ]
+    {
+      question: "¿Quién creó Bitcoin?",
+      options: [
+        "Satoshi Nakamoto",
+        "Vitalik Buterin",
+        "Charlie Lee",
+        "Elon Musk",
+      ],
+      correctAnswer: "Satoshi Nakamoto",
+    },
+    {
+      question: "¿Qué es una criptomoneda?",
+      options: [
+        "Dinero digital",
+        "Una inversión tradicional",
+        "Una tarjeta de crédito",
+        "Un sistema bancario",
+      ],
+      correctAnswer: "Dinero digital",
+    },
+    {
+      question: "¿Cómo se llama la unidad más pequeña de Bitcoin?",
+      options: ["Satoshi", "Ether", "Ripple", "Litecoin"],
+      correctAnswer: "Satoshi",
+    },
+    {
+      question: "¿Qué es un blockchain?",
+      options: [
+        "Un registro descentralizado",
+        "Una red social",
+        "Una criptomoneda",
+        "Una billetera digital",
+      ],
+      correctAnswer: "Un registro descentralizado",
+    },
+    {
+      question: "¿Cuántos Bitcoins existen en total?",
+      options: ["21 millones", "100 millones", "50 millones", "1 millón"],
+      correctAnswer: "21 millones",
+    },
+  ],
 };
 
 const QuizComponent = () => {
   const [moduleContent, setModuleContent] = useState(null);
   const [questionIndex, setQuestionIndex] = useState(0); // Índice de la pregunta actual
-  const [userLevel, setUserLevel] = useState("beginner"); // 'beginner' o 'advanced'
+  const [userLevel] = useState("beginner"); // Nivel predeterminado
   const [feedback, setFeedback] = useState("");
-  const [feedbackColor, setFeedbackColor] = useState(""); // Color para el feedback (rojo para incorrecto)
+  const [feedbackColor, setFeedbackColor] = useState(""); // Color para el feedback
   const [sats, setSats] = useState(0); // Puntos (sats) del usuario
   const [completed, setCompleted] = useState(false);
 
@@ -34,19 +72,16 @@ const QuizComponent = () => {
   };
 
   const loadQuestion = () => {
-    if (questionIndex < questions[userLevel].length) {
-      return questions[userLevel][questionIndex];
-    }
-    return null;
+    return questions[userLevel][questionIndex] || null;
   };
 
   const handleAnswer = (selectedAnswer) => {
     const currentQuestion = loadQuestion();
 
-    if (selectedAnswer === currentQuestion.correctAnswer) {
+    if (currentQuestion && selectedAnswer === currentQuestion.correctAnswer) {
       setFeedback("¡Correcto!");
       setFeedbackColor("bg-green-200"); // Color verde para respuesta correcta
-      setSats(sats + 10); // Sumamos 10 sats por una respuesta correcta
+      setSats((prevSats) => prevSats + 10); // Sumamos 10 sats por respuesta correcta
     } else {
       setFeedback("Incorrecto.");
       setFeedbackColor("bg-red-200"); // Color rojo para respuesta incorrecta
@@ -55,7 +90,7 @@ const QuizComponent = () => {
 
   const handleNext = () => {
     if (questionIndex < questions[userLevel].length - 1) {
-      setQuestionIndex(questionIndex + 1); // Pasar a la siguiente pregunta
+      setQuestionIndex((prevIndex) => prevIndex + 1); // Pasar a la siguiente pregunta
       setFeedback(""); // Resetear feedback
       setFeedbackColor(""); // Resetear color de feedback
     } else {
