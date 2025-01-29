@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Texto y Logo */}
         <div className="flex-1 text-center md:text-left mb-6 md:mb-0">
           <p className="text-xl md:text-2xl font-medium text-[#f2f2f2] leading-relaxed">
-          Learn, earn and grow with Bitcoin.
+          SatoshiLab
           </p>
           <Link to="/" className="mt-4 inline-block">
             <img src="/images/SatoshiLog.png" alt="Logo" className="h-10 w-auto mx-auto md:mx-0" />
@@ -19,11 +19,11 @@ const Footer = () => {
         {/* Botones */}
         <div className="flex flex-col md:flex-row gap-4">
           <button className="flex items-center justify-center gap-2 px-6 py-2 border border-[#f2f2f2] text-[#f2f2f2] font-bold text-sm rounded transition hover:bg-[#CCBB8E] hover:text-black">
-            Contact us
+            Contact Us
             <span className="text-base transform rotate-45">➔</span>
           </button>
           <button className="px-6 py-2 bg-[#CCBB8E] text-black font-bold text-sm rounded transition hover:bg-[#BF8D30]">
-          More information
+            Information
           </button>
         </div>
       </div>

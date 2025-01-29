@@ -30,7 +30,7 @@ export default function Dashboard() {
 
   // Verificar si el usuario está logueado
   useEffect(() => {
-    // Aquí puedes poner la lógica de autenticación, por ejemplo:
+    // login
     const userLoggedIn = localStorage.getItem("userLoggedIn");
     if (userLoggedIn) {
       setIsLoggedIn(true);
