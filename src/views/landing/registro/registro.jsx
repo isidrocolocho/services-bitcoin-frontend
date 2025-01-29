@@ -77,21 +77,21 @@ export default function Registro() {
             <div
                 className="w-1/2 bg-cover bg-left"
                 style={{
-                    backgroundImage: "url('/images/Registro.png')",
+                    backgroundImage: "url('/images/Diseño_Login.jpg')",
                     backgroundSize: "cover",
                     backgroundPosition: "left center",
                 }}
             ></div>
             {/* Sección del formulario */}
-            <div className="w-full md:w-1/2 flex items-center justify-center bg-white pt-38">
+            <div className="w-full md:w-1/2 flex items-center justify-center bg-[#F1EEE7] pt-38">
                 <div className="w-full max-w-md px-8">
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombres">
-                                Nombres
+                                Names
                             </label>
                             <input
-                                className="w-full border-b-2 border-blue-600 focus:outline-none focus:border-blue-800"
+                                className="w-full border-b-2 bg-[#F1EEE7] border-green-900 focus:outline-none focus:border-green-800"
                                 id="nombres"
                                 name="nombres"
                                 type="text"
@@ -118,7 +118,7 @@ export default function Registro() {
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="usuario">
-                                Usuario
+                                User
                             </label>
                             <input
                                 className="w-full border-b-2 border-blue-600 focus:outline-none focus:border-blue-800"
@@ -133,7 +133,7 @@ export default function Registro() {
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="correo">
-                                Correo Electrónico
+                                Email
                             </label>
                             <input
                                 className="w-full border-b-2 border-blue-600 focus:outline-none focus:border-blue-800"
@@ -148,7 +148,7 @@ export default function Registro() {
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contraseña">
-                                Contraseña
+                                Password
                             </label>
                             <input
                                 className="w-full border-b-2 border-blue-600 focus:outline-none focus:border-blue-800"
@@ -163,7 +163,7 @@ export default function Registro() {
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmarContraseña">
-                                Confirmar Contraseña
+                            Confirm password.
                             </label>
                             <input
                                 className="w-full border-b-2 border-blue-600 focus:outline-none focus:border-blue-800"
@@ -179,10 +179,10 @@ export default function Registro() {
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="tipoRegistro">
-                                Tipo de registro
+                            Type of registration.
                             </label>
                             <select
-                                className="w-full border-b-2 border-blue-600 focus:outline-none focus:border-blue-800"
+                                className="w-full border-b-2 bg-[#F1EEE7] border-green-900 focus:outline-none focus:border-green-800"
                                 id="tipoRegistro"
                                 value={tipoRegistro}
                                 onChange={handleTipoRegistroChange}
@@ -193,15 +193,15 @@ export default function Registro() {
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 px-4 rounded-md hover:from-blue-600 hover:to-blue-800"
+                            className="w-full bg-gradient-to-r from-green-700 to-green-800 text-white py-2 px-4 rounded-md hover:from-green-600 hover:to-green-800"
                         >
-                            Registrarse
+                            Sign Up
                         </button>
                     </form>
                     <p className="text-center text-sm text-gray-600 mt-4">
-                        ¿Ya tienes cuenta?{" "}
-                        <Link to="/login" className="text-blue-500 hover:underline">
-                            Inicia Sesión.
+                    Already have an account?{" "}
+                        <Link to="/login" className="text-green-500 hover:underline">
+                            LogIn.
                         </Link>
                     </p>
                 </div>

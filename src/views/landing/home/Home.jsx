@@ -85,19 +85,19 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-[#0F3715] py-16 px-8">
+      <section className="bg-[#f2f2f2] py-16 px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-[#5E8F34] mb-8">Bitcoin Community Testimonials</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
-              { name: "Satoshi Lover", username: "@crypto_enthusiast", message: "Bitcoin gave me the financial freedom I always dreamed of!", photo: "/images/user1.jpeg" },
-              { name: "HODL Queen", username: "@HodlForever", message: "Investing in Bitcoin has been the best decision of my life.", photo: "/images/user2.jpeg" },
-              { name: "Mining King", username: "@btcminer_pro", message: "Mining Bitcoin is a challenging but thrilling experience.", photo: "/images/user3.jpeg" },
-              { name: "Blockchain Believer", username: "@blockchain_advocate", message: "The technology behind Bitcoin is revolutionary. A true paradigm shift!", photo: "/images/user4.jpeg" },
-              { name: "Crypto Nomad", username: "@travelwithcrypto", message: "I live traveling thanks to Bitcoin payments. It's amazing!", photo: "/images/user5.jpeg" },
-              { name: "Sats Stacker", username: "@sats4life", message: "Saving in satoshis is the key to a strong future.", photo: "/images/user6.jpeg" },
-              { name: "BTC Maximalist", username: "@btcmaxi", message: "No other cryptocurrency matches Bitcoin's security and adoption.", photo: "/images/user7.jpeg" },
-              { name: "Decentralized Dreamer", username: "@decentralize", message: "Bitcoin represents freedom and financial autonomy for everyone.", photo: "/images/user8.jpeg" },
+              { name: "Satoshi Lover", username: "@crypto_enthusiast", message: "Bitcoin gave me the financial freedom I always dreamed of!", photo: "/images/Perfil1.jpg" },
+              { name: "HODL Queen", username: "@HodlForever", message: "Investing in Bitcoin has been the best decision of my life.", photo: "/images/Perfil2.jpg" },
+              { name: "Mining King", username: "@btcminer_pro", message: "Mining Bitcoin is a challenging but thrilling experience.", photo: "/images/Perfil3.jpg" },
+              { name: "Blockchain Believer", username: "@blockchain_advocate", message: "The technology behind Bitcoin is revolutionary. A true paradigm shift!", photo: "/images/Perfil4.jpg" },
+              { name: "Crypto Nomad", username: "@travelwithcrypto", message: "I live traveling thanks to Bitcoin payments. It's amazing!", photo: "/images/Perfil5.jpg" },
+              { name: "Sats Stacker", username: "@sats4life", message: "Saving in satoshis is the key to a strong future.", photo: "/images/Perfil6.jpg" },
+              { name: "BTC Maximalist", username: "@btcmaxi", message: "No other cryptocurrency matches Bitcoin's security and adoption.", photo: "/images/Perfil7.jpg" },
+              { name: "Decentralized Dreamer", username: "@decentralize", message: "Bitcoin represents freedom and financial autonomy for everyone.", photo: "/images/Perfil8.jpg" },
             ].map((testimonial, index) => (
               <div key={index} className="bg-[#CCBB8E] p-6 rounded-lg shadow-lg flex flex-col space-y-4 transition-transform duration-300 hover:scale-105">
                 <div className="flex items-center space-x-4">

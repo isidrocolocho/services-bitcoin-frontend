@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Texto y Logo */}
         <div className="flex-1 text-center md:text-left mb-6 md:mb-0">
           <p className="text-xl md:text-2xl font-medium text-[#F2F2F2] leading-relaxed">
-            Bitcoin: Financial freedom for everyone.
+          Bitcoin: Financial freedom for everyone.
           </p>
           <Link to="/" className="mt-4 inline-block">
             <img
@@ -24,6 +24,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row gap-4">
           <button className="flex items-center justify-center gap-2 px-6 py-2 border border-[#F2F2F2] text-[#F2F2F2] font-bold text-sm rounded transition hover:bg-[#CCBB8E] hover:text-[#0F3715]">
             Contact Us
+            
             <span className="text-base transform rotate-[-45deg]">➔</span> {/* Changed the rotation */}
           </button>
           <button className="px-6 py-2 bg-[#CCBB8E] text-[#0F3715] font-bold text-sm rounded transition hover:bg-[#BF8D30] hover:text-[#F2F2F2]">

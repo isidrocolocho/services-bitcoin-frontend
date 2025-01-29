@@ -70,7 +70,7 @@ export default function Login() {
             ></div>
 
             {/* Sección del formulario de login */}
-            <div className="w-full md:w-1/2 flex items-center justify-center bg-white">
+            <div className="w-full md:w-1/2 flex items-center justify-center bg-[#F1EEE7]">
                 <div className="w-full max-w-md mx-auto px-6 sm:px-8">
                     <h2 className="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
                     {errors.general && <p className="text-red-500 text-sm text-center mb-4">{errors.general}</p>}
@@ -92,10 +92,10 @@ export default function Login() {
                         </div>
                         <div className="mb-6">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-                                Contraseña
+                                Password
                             </label>
                             <input
-                                className="w-full border-b-2 border-blue-600 focus:outline-none focus:border-blue-800"
+                                className="w-full border-b-2 bg-[#F1EEE7] border-green-800 focus:outline-none focus:border-green-800"
                                 id="password"
                                 name="password"
                                 type="password"
@@ -107,15 +107,15 @@ export default function Login() {
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 px-4 rounded-md hover:from-blue-600 hover:to-blue-800"
+                            className="w-full bg-gradient-to-r from-green-700 to-green-800 text-white py-2 px-4 rounded-md hover:from-green-600 hover:to-green-800"
                         >
-                            Iniciar Sesión
+                            LogIn
                         </button>
                     </form>
                     <p className="text-center text-sm text-gray-600 mt-4">
-                        ¿No tienes cuenta?{" "}
-                        <Link to="/registro" className="text-blue-500 hover:underline">
-                            Regístrate.
+                    Don't have an account ?{" "}
+                        <Link to="/registro" className="text-green-800 hover:underline">
+                            Sign Up
                         </Link>
                     </p>
                 </div>

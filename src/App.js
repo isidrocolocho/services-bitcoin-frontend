@@ -1,11 +1,10 @@
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"; //
 import { renderRoutesGlobal, routes } from "./router/Router"; // Asegúrate de que el import esté correcto
 import ToastComponent from "./components/core/ToastComponent";
 import Loader from "./components/core/LoaderComponent";
 import '@fontsource/inter'; // Por defecto, incluye 400.
 import QuizComponent from './components/quiz/QuizComponent.jsx';
-
-
+import Home from "./views/landing/home/Home";
 
 function App() {
   return (
@@ -14,6 +13,7 @@ function App() {
       <ToastComponent />
       <BrowserRouter>
         <Routes>
+        <Route path="/home" element={<Home />} /> 
           {renderRoutesGlobal(routes)} {/* Renders the routes */}
         </Routes>
       </BrowserRouter>
@@ -22,3 +22,4 @@ function App() {
 }
 
 export default App;
+
