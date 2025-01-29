@@ -2,18 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom"; 
 
 const Home = () => {
-  // Array de testimonios
-  const testimonials = [
-    { name: "Satoshi Lover", username: "@crypto_enthusiast", message: "Bitcoin gave me the financial freedom I always dreamed of!", photo: "/images/Perfil1.jpg" },
-    { name: "HODL Queen", username: "@HodlForever", message: "Investing in Bitcoin has been the best decision of my life.", photo: "/images/Perfil2.jpg" },
-    { name: "Mining King", username: "@btcminer_pro", message: "Mining Bitcoin is a challenging but thrilling experience.", photo: "/images/Perfil3.jpg" },
-    { name: "Blockchain Believer", username: "@blockchain_advocate", message: "The technology behind Bitcoin is revolutionary. A true paradigm shift!", photo: "/images/Perfil4.jpg" },
-    { name: "Crypto Nomad", username: "@travelwithcrypto", message: "I live traveling thanks to Bitcoin payments. It's amazing!", photo: "/images/Perfil5.jpg" },
-    { name: "Sats Stacker", username: "@sats4life", message: "Saving in satoshis is the key to a strong future.", photo: "/images/Perfil6.jpg" },
-    { name: "BTC Maximalist", username: "@btcmaxi", message: "No other cryptocurrency matches Bitcoin's security and adoption.", photo: "/images/Perfil7.jpg" },
-    { name: "Decentralized Dreamer", username: "@decentralize", message: "Bitcoin represents freedom and financial autonomy for everyone.", photo: "/images/Perfil8.jpg" },
-  ];
-
   return (
     <div>
       {/* Hero Section */}
@@ -66,7 +54,7 @@ const Home = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {["Learn Bitcoin!", "Earn Knowledge!", "Our Services", "You're an Expert!"].map((title, index) => (
             <div
-              key={title}  // Usar title como key ya que es único
+              key={index}
               className="bg-[#F2F2F2] p-6 rounded-lg border-2 border-[#BF8D30] shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
             >
               <h2 className="text-2xl font-semibold text-[#0F3715] mb-4">{title}</h2>
@@ -95,8 +83,17 @@ const Home = () => {
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-[#5E8F34] mb-8">Bitcoin Community Testimonials</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.username} className="bg-[#CCBB8E] p-6 rounded-lg shadow-lg flex flex-col space-y-4 transition-transform duration-300 hover:scale-105">
+            {[
+              { name: "Satoshi Lover", username: "@crypto_enthusiast", message: "Bitcoin gave me the financial freedom I always dreamed of!", photo: "/images/Perfil1.jpg" },
+              { name: "HODL Queen", username: "@HodlForever", message: "Investing in Bitcoin has been the best decision of my life.", photo: "/images/Perfil2.jpg" },
+              { name: "Mining King", username: "@btcminer_pro", message: "Mining Bitcoin is a challenging but thrilling experience.", photo: "/images/Perfil3.jpg" },
+              { name: "Blockchain Believer", username: "@blockchain_advocate", message: "The technology behind Bitcoin is revolutionary. A true paradigm shift!", photo: "/images/Perfil4.jpg" },
+              { name: "Crypto Nomad", username: "@travelwithcrypto", message: "I live traveling thanks to Bitcoin payments. It's amazing!", photo: "/images/Perfil5.jpg" },
+              { name: "Sats Stacker", username: "@sats4life", message: "Saving in satoshis is the key to a strong future.", photo: "/images/Perfil6.jpg" },
+              { name: "BTC Maximalist", username: "@btcmaxi", message: "No other cryptocurrency matches Bitcoin's security and adoption.", photo: "/images/Perfil7.jpg" },
+              { name: "Decentralized Dreamer", username: "@decentralize", message: "Bitcoin represents freedom and financial autonomy for everyone.", photo: "/images/Perfil8.jpg" },
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-[#CCBB8E] p-6 rounded-lg shadow-lg flex flex-col space-y-4 transition-transform duration-300 hover:scale-105">
                 <div className="flex items-center space-x-4">
                   <img src={testimonial.photo} alt={testimonial.name} className="h-12 w-12 rounded-full object-cover" />
                   <div>
