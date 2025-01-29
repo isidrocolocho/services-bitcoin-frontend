@@ -1,6 +1,6 @@
 // src/pages/QuizPage.jsx
 import React from "react";
-import QuizComponent from "../components/Quiz/QuizComponent";
+import QuizComponent from "./QuizComponent";
 
 const QuizPage = () => {
   return (
