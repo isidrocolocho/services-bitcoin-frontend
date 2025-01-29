@@ -53,7 +53,7 @@ const ProcesosRealizados = () => {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-center mb-8">Historial de Procesos Realizados</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">History of Completed Processes</h1>
 
       <div className="shadow-lg rounded-lg bg-white p-4">
         <FullCalendar
@@ -91,7 +91,7 @@ const ProcesosRealizados = () => {
               onClick={() => setDetallesEvento(null)}
               className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
-              Cerrar
+              Close
             </button>
           </div>
         </div>

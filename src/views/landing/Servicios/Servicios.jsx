@@ -41,18 +41,18 @@ export default function Servicios() {
 
 
 {/* Servicios */}
-<section className="py-20 bg-gray-500">
+<section className="py-20 bg-[#0F3715]">
         <div className="text-center">
-          <h2 className="text-5xl font-extrabold text-black mb-4">
+          <h2 className="text-5xl font-extrabold text-[#5E8F34] mb-4">
           Our Services
           </h2>
-          <p className="text-lg text-gray-950">
+          <p className="text-lg text-[#5E8F34]">
           Turn knowledge into action and rewards with our innovative services.
           Lessons for beginners with fundamentals and security in Bitcoin.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-8 py-12 ">
           {/* Servicios Tarjetas */}
           {[
             {
@@ -82,7 +82,7 @@ export default function Servicios() {
           ].map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all"
+              className="bg-[#CCBB8E] rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
@@ -93,8 +93,8 @@ export default function Servicios() {
                 className="w-full h-56 object-cover"
               />
               <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold">{service.title}</h3>
-                <p className="text-gray-600 mt-2">{service.description}</p>
+                <h3 className="text-2xl text-[#0F3715] font-bold">{service.title}</h3>
+                <p className="text-[#5E8F34] mt-2">{service.description}</p>
               </div>
             </motion.div>
           ))}
@@ -102,7 +102,7 @@ export default function Servicios() {
       </section>
  
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-teal-600 to-green-500 text-white py-16 px-5 text-center">
+      <section className=" bg-[#CCBB8E] text-[#0F3715] py-16 px-5 text-center">
         <motion.h2
           className="text-4xl font-extrabold mb-6"
           initial={{ opacity: 0, y: -20 }}
@@ -121,7 +121,7 @@ export default function Servicios() {
           and new opportunities.
         </motion.p>
         <motion.button
-          className="bg-white text-teal-700 font-bold py-3 px-8 rounded-xl border-2 border-white hover:bg-teal-700 hover:text-white transition-all"
+          className="bg-[#5E8F34] text-white font-bold py-3 px-8 rounded-xl border-2 border-[#5E8F34] hover:bg-[#0F3715] hover:text-white transition-all"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}

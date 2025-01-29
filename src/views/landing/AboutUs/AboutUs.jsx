@@ -84,73 +84,46 @@ export default function AboutUs() {
       </section>
 
 
-      <section className="bg-white min-h-screen grid grid-cols-2 grid-rows-3 gap-4 lg:grid-cols-6 lg:grid-rows-2 lg:gap-0">
-        {/* Texto */}
-        <div className="row-span-1 col-span-2 flex flex-col justify-center items-center text-center lg:row-span-2 lg:col-span-2 lg:items-center lg:justify-center px-6">
-          <h2 className="text-2xl font-bold text-black mb-4">
-            Conoce nuestro equipo de <span className="text-verde-aqua italic">Desarrolladores</span>
-          </h2>
-          <p className="text-gray-700">
-            Un equipo comprometido con la creación de soluciones innovadoras para transformar la experiencia médica.
-          </p>
-        </div>
+      <section className="bg-white min-h-[90vh] flex flex-col justify-center items-center text-center px-6">
+      {/* Texto */}
+      <div className="mb-8 max-w-2xl">
+        <h2 className="text-3xl font-medium-500 text-black mb-4 font-poppins">
+          Meet Our Team of <span className="text-[#0F3715] bold ">Developers</span>
+        </h2>
+        <p className="text-gray-700 text-lg">
 
+        A team committed to creating innovative solutions to transform <br/> the way services are offered and hired, driving Bitcoin adoption.  
+        </p>
+      </div>
+
+      {/* Tarjetas */}
+      <div className="flex justify-center gap-6 w-full px-6">
         {/* Card 1 */}
-        <div
-          className="flex justify-center items-start row-start-1 col-start-1 lg:row-start-1 lg:col-start-3 hover:scale-105 transition-transform duration-300 cursor-pointer overflow-hidden"
-          onClick={() => window.open("https://www.linkedin.com/in/isidro-colocho-72b0a3bb/?originalSubdomain=sv", "_blank")}
-        >
-          <div className="w-40 h-80 rounded-b-[100px] bg-celeste-aqua flex justify-center items-start overflow-hidden">
-            <img
-              src="/images/Isidro.png"
-              alt="Isidro"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Card 3 */}
-        <div
-          className="flex justify-center items-start row-start-1 col-start-2 lg:row-start-1 lg:col-start-5 hover:scale-105 transition-transform duration-300 cursor-pointer overflow-hidden"
-          onClick={() => window.open("https://www.linkedin.com/in/noelia-g%C3%B3mez-mata-aa3354293/", "_blank")}
-        >
-          <div className="w-40 h-80 rounded-b-[100px] bg-verde-aqua flex justify-center items-start overflow-hidden">
-            <img
-              src="/images/Noelia.png"
-              alt="Noelia"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="w-1/5 h-96 rounded-xl justify-center items-start overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => window.open("https://www.linkedin.com/in/isidro-colocho-72b0a3bb/?originalSubdomain=sv", "_blank")}>          
+          <img src="/images/Isidr.jpeg" alt="Isidro" className="w-full h-full object-cover" />
         </div>
 
         {/* Card 2 */}
-        <div
-          className="flex justify-center items-end row-start-3 col-start-1 lg:row-start-2 lg:col-start-4 hover:scale-105 transition-transform duration-300 cursor-pointer overflow-hidden"
-          onClick={() => window.open("https://www.linkedin.com/in/gabriel-campos-salamanca-050579337/", "_blank")}
-        >
-          <div className="w-40 h-80 rounded-t-[100px] bg-verde-musgo flex justify-center items-end overflow-hidden">
-            <img
-              src="/images/Gabriel.png"
-              alt="Gabriel"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="w-1/5 h-96 rounded-xl bg-verde-aqua flex justify-center items-start overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => window.open("https://www.linkedin.com/in/noelia-g%C3%B3mez-mata-aa3354293/", "_blank")}>          
+          <img src="/images/noe.jpeg" alt="Noelia" className="w-full h-full object-cover" />
+        </div>
+
+        {/* Card 3 */}
+        <div className="w-1/5 h-96 rounded-xl bg-verde-musgo flex justify-center items-end overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => window.open("")}>          
+          <img src="/images/Ho.jpg" alt="Gabriel" className="w-full h-full object-cover" />
         </div>
 
         {/* Card 4 */}
-        <div
-          className="flex justify-center items-end row-start-3 col-start-2 lg:row-start-2 lg:col-start-6 hover:scale-105 transition-transform duration-300 cursor-pointer overflow-hidden"
-          onClick={() => window.open("https://www.linkedin.com/in/karla-rosales-manzano", "_blank")}
-        >
-          <div className="w-40 h-80 rounded-t-[100px] bg-azul-celeste flex justify-center items-end overflow-hidden">
-            <img
-              src="/images/Karla.png"
-              alt="Karla"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="w-1/5 h-96 rounded-xl bg-azul-celeste flex justify-center items-end overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => window.open("https://www.linkedin.com/in/dania-merari-urias-viscarra-768aa5289/", "_blank")}>          
+          <img src="/images/Dania.jpeg" alt="Karla" className="w-full h-full object-cover" />
         </div>
-      </section>
+
+        {/* Card 5 */}
+        <div className="w-1/5 h-96 rounded-xl bg-rojo-claro flex justify-center items-end overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => window.open("https://www.linkedin.com/in/paoladeras/", "_blank")}>          
+          <img src="/images/Paola.jpeg" alt="Nuevo Integrante" className="w-full h-full object-cover" />
+        </div>
+      </div>
+    </section>
     </div>
   )
 }
