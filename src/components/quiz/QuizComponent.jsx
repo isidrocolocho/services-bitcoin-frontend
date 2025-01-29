@@ -1,107 +1,113 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-// Simulación de los módulos y preguntas
 const modules = {
-  1: { content: "Bitcoin es una moneda digital que permite transacciones sin intermediarios. Fue creado por Satoshi Nakamoto." },
-  // Agrega más módulos si es necesario
+  1: {
+    title: `
+      <h1 class='text-5xl font-extrabold text-center text-[#BF8D30] drop-shadow-lg'>
+        🚀 Introduction to Bitcoin 🚀
+      </h1>
+    `,
+    content: `
+      <div className="space-y-6 p-8 bg-gradient-to-br from-[#0F3715] to-[#5E8F34] text-[#F2F2F2] rounded-lg shadow-2xl border border-[#BF8D30]">
+        <p className="text-lg font-medium">Bitcoin is a <span class='font-bold text-[#BF8D30]'>decentralized digital currency</span> that allows transactions without intermediaries. It was created by 
+          <span class='font-extrabold text-[#F2F2F2] bg-[#BF8D30] px-2 py-1 rounded'>Satoshi Nakamoto</span> in 2009. It uses a revolutionary technology called 
+          <span class='font-bold text-[#5E8F34] underline'>blockchain</span> to ensure security, transparency, and decentralization.</p>
+        
+        <div className="flex justify-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" 
+            alt="Bitcoin logo" 
+            className="w-40 animate-bounce" />
+        </div>
+        
+        <p className="text-lg font-medium">Bitcoin is often referred to as 
+          <span class='font-extrabold text-[#CCBB8F] bg-[#5E8F34] px-2 py-1 rounded'">digital gold</span> due to its limited supply of 21 million coins. Unlike traditional currencies, 
+          Bitcoin operates on a decentralized network maintained by thousands of miners and nodes worldwide, ensuring that no single entity can control it.</p>
+        
+        <h2 className="text-3xl font-bold text-[#BF8D30] mt-6">✨ Key Features of Bitcoin ✨</h2>
+        <ul className="list-disc list-inside text-lg font-medium space-y-2">
+          <li><span class='text-[#F2F2F2] font-bold'>Decentralization:</span> No government or central bank controls Bitcoin.</li>
+          <li><span class='text-[#F2F2F2] font-bold'>Transparency:</span> All transactions are recorded on a public ledger.</li>
+          <li><span class='text-[#F2F2F2] font-bold'>Security:</span> Transactions are secured through cryptographic algorithms.</li>
+          <li><span class='text-[#F2F2F2] font-bold'>Scarcity:</span> Only 21 million Bitcoins will ever exist.</li>
+        </ul>
+      </div>
+    `
+  }
 };
 
-const questions = {
-  beginner: [
-    { question: "¿Quién creó Bitcoin?", options: ["Satoshi Nakamoto", "Vitalik Buterin", "Charlie Lee", "Elon Musk"], correctAnswer: "Satoshi Nakamoto" },
-    { question: "¿Qué es una criptomoneda?", options: ["Dinero digital", "Una inversión tradicional", "Una tarjeta de crédito", "Un sistema bancario"], correctAnswer: "Dinero digital" },
-    { question: "¿Cómo se llama la unidad más pequeña de Bitcoin?", options: ["Satoshi", "Ether", "Ripple", "Litecoin"], correctAnswer: "Satoshi" },
-    { question: "¿Qué es un blockchain?", options: ["Un registro descentralizado", "Una red social", "Una criptomoneda", "Una billetera digital"], correctAnswer: "Un registro descentralizado" },
-    { question: "¿Cuántos Bitcoins existen en total?", options: ["21 millones", "100 millones", "50 millones", "1 millón"], correctAnswer: "21 millones" }
-  ]
-};
+const questions = [
+  { question: "Who created Bitcoin?", options: ["Satoshi Nakamoto", "Vitalik Buterin", "Charlie Lee", "Elon Musk"], correct: "Satoshi Nakamoto" },
+  { question: "What is a cryptocurrency?", options: ["Digital money", "A traditional investment", "A credit card", "A banking system"], correct: "Digital money" },
+  { question: "What is the smallest unit of Bitcoin called?", options: ["Satoshi", "Ether", "Ripple", "Litecoin"], correct: "Satoshi" },
+  { question: "What is a blockchain?", options: ["A decentralized ledger", "A social network", "A cryptocurrency", "A digital wallet"], correct: "A decentralized ledger" },
+  { question: "How many Bitcoins exist in total?", options: ["21 million", "100 million", "50 million", "1 million"], correct: "21 million" }
+];
 
 const QuizComponent = () => {
-  const [moduleContent, setModuleContent] = useState(null);
-  const [questionIndex, setQuestionIndex] = useState(0); // Índice de la pregunta actual
-  const [userLevel, setUserLevel] = useState("beginner"); // 'beginner' o 'advanced'
+  const [step, setStep] = useState("lesson");
+  const [questionIndex, setQuestionIndex] = useState(0);
   const [feedback, setFeedback] = useState("");
-  const [feedbackColor, setFeedbackColor] = useState(""); // Color para el feedback (rojo para incorrecto)
-  const [sats, setSats] = useState(0); // Puntos (sats) del usuario
-  const [completed, setCompleted] = useState(false);
+  const [score, setScore] = useState(0);
+  const navigate = useNavigate(); 
 
-  useEffect(() => {
-    loadModule(1); // Cargar el módulo 1
-  }, []);
-
-  const loadModule = (moduleId) => {
-    setModuleContent(modules[moduleId]);
+  const handleExit = () => {
+    navigate("/home"); // Redirige al home dentro de landing/home
   };
 
-  const loadQuestion = () => {
-    if (questionIndex < questions[userLevel].length) {
-      return questions[userLevel][questionIndex];
-    }
-    return null;
-  };
-
-  const handleAnswer = (selectedAnswer) => {
-    const currentQuestion = loadQuestion();
-
-    if (selectedAnswer === currentQuestion.correctAnswer) {
-      setFeedback("¡Correcto!");
-      setFeedbackColor("bg-green-200"); // Color verde para respuesta correcta
-      setSats(sats + 10); // Sumamos 10 sats por una respuesta correcta
+  const handleAnswer = (answer) => {
+    if (answer === questions[questionIndex].correct) {
+      setFeedback("✅ Correct!");
+      setScore(score + 10);
     } else {
-      setFeedback("Incorrecto.");
-      setFeedbackColor("bg-red-200"); // Color rojo para respuesta incorrecta
+      setFeedback("❌ Incorrect.");
     }
   };
 
   const handleNext = () => {
-    if (questionIndex < questions[userLevel].length - 1) {
-      setQuestionIndex(questionIndex + 1); // Pasar a la siguiente pregunta
-      setFeedback(""); // Resetear feedback
-      setFeedbackColor(""); // Resetear color de feedback
+    if (questionIndex < questions.length - 1) {
+      setQuestionIndex(questionIndex + 1);
+      setFeedback("");
     } else {
-      setCompleted(true); // Ya se completaron todas las preguntas
+      setStep("completed");
     }
   };
 
-  const currentQuestion = loadQuestion();
-
   return (
-    <div className="p-6 space-y-6">
-      <h1 className="text-2xl font-bold">Módulo: Introducción al Bitcoin</h1>
-      <p>{moduleContent?.content}</p>
-
-      {!completed ? (
-        <div className="mt-6">
-          <h2 className="text-xl font-semibold">{currentQuestion?.question}</h2>
-          <div className="space-y-4 mt-4">
-            {currentQuestion?.options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswer(option)}
-                className="w-full bg-gray-200 p-3 rounded-lg text-left"
-              >
+    <div className="p-6 space-y-6 text-lg bg-gradient-to-r from-[#0F3715] to-[#5E8F34] min-h-screen flex flex-col items-center justify-center text-white">
+      {step === "lesson" && (
+        <div>
+          <div dangerouslySetInnerHTML={{ __html: modules[1].title + modules[1].content }} />
+          <button onClick={() => setStep("quiz")} className="mt-6 p-4 bg-[#BF8D30] text-black font-bold rounded-full w-full shadow-lg hover:bg-[#5E8F34] transition duration-300">
+            🎯 Continue to Quiz
+          </button>
+        </div>
+      )}
+      {step === "quiz" && (
+        <div className="p-6 bg-[#CCBB8F] text-black rounded-lg shadow-lg w-3/4">
+          <h2 className="text-2xl font-bold">{questions[questionIndex].question}</h2>
+          <div className="mt-4 space-y-2">
+            {questions[questionIndex].options.map((option, index) => (
+              <button key={index} onClick={() => handleAnswer(option)} className="w-full p-3 bg-[#BF8D30] text-black font-medium rounded-lg hover:bg-[#5E8F34]">
                 {option}
               </button>
             ))}
           </div>
-
-          {feedback && (
-            <div className={`mt-6 p-4 rounded ${feedbackColor}`}>
-              <p>{feedback}</p>
-            </div>
-          )}
-
-          <button
-            onClick={handleNext}
-            className="mt-6 p-3 bg-blue-500 text-white rounded-full w-full"
-          >
-            Siguiente
+          {feedback && <p className="mt-4 font-bold">{feedback}</p>}
+          <button onClick={handleNext} className="mt-6 p-3 bg-[#BF8D30] text-black font-bold rounded-full w-full shadow-lg hover:bg-[#5E8F34] transition duration-300">
+            Next
           </button>
         </div>
-      ) : (
-        <div className="mt-6 p-4 bg-green-200 rounded">
-          <h2>¡Felicidades! Has completado el cuestionario.</h2>
-          <p>Has ganado {sats} sats por tus respuestas correctas.</p>
+      )}
+      {step === "completed" && (
+        <div className="p-6 bg-[#BF8D30] text-black text-center rounded-lg shadow-lg w-3/4">
+          <h2 className="text-2xl font-bold">🎉 Congratulations! 🎉</h2>
+          <p>You have completed the quiz and earned {score} Satoshis! 🏆</p>
+          <p className="mt-4 italic">Keep learning and exploring the world of Bitcoin! 🚀</p>
+          <button onClick={handleExit} className="mt-6 px-6 py-3 bg-red-500 text-white font-bold rounded-full shadow-lg hover:bg-red-700 transition duration-300 transform hover:scale-105">
+  🔙 Exit & Return Home
+</button>
+
         </div>
       )}
     </div>
